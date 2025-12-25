@@ -1,4 +1,8 @@
-# Unifyt Units Catalog - Complete Reference
+# Unifyt Units Catalog v0.2.0
+
+## 📋 Complete Reference of All 300+ Units
+
+This document provides a comprehensive catalog of all units supported by Unifyt v0.2.0. - Complete Reference
 
 ## 📚 Overview
 

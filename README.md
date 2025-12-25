@@ -1,6 +1,10 @@
-# Unifyt
+# Unifyt v0.2.0
 
 A powerful and easy-to-use Python library for unit conversion and calculations, combining the best features of Pint and Unyt.
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://github.com/MEERAN2314/unifyt)
 
 ## 🌟 Why Unifyt?
 
@@ -38,9 +42,11 @@ print(speed.to('kilometer/hour'))  # 36.0 km/h 🎯
 
 - **300+ units** (3x increase from v0.1.0!)
 - **80+ constants** (2.7x increase!)
-- **15+ new categories**: Electromagnetic, radioactivity, data storage, and more
+- **25+ exception types** for precise error handling
+- **15+ new categories**: Electromagnetic, radioactivity, data storage, viscosity, and more
+- **Comprehensive documentation**: 10+ new guides including WHY_UNIFYT.md, EXCEPTIONS_GUIDE.md
 - **Fully backward compatible** - All existing code works
-- See [VERSION_0.2.0_RELEASE.md](VERSION_0.2.0_RELEASE.md) for details
+- See [CHANGELOG.md](CHANGELOG.md) for complete details
 - **Custom Units**: Define your own units and unit systems
 - **Context Management**: Switch between unit systems easily
 - **Physical Constants**: Built-in library of physical and astronomical constants
@@ -55,7 +61,12 @@ pip install unifyt
 
 ## 🚀 Quick Start
 
-**New to Unifyt?** → [START_HERE.md](START_HERE.md) - **Get started in 60 seconds!**
+**New to Unifyt?** Choose your path:
+
+- **60 seconds**: [START_HERE.md](starter documents/START_HERE.md) - Lightning fast intro
+- **5 minutes**: [QUICKSTART.md](QUICKSTART.md) - Quick tutorial  
+- **Complete**: [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) - Everything you need
+- **Why use it**: [WHY_UNIFYT.md](WHY_UNIFYT.md) - Value proposition
 
 ```bash
 pip install unifyt
@@ -91,21 +102,27 @@ temps = utils.linspace(Quantity(0, 'celsius'), Quantity(100, 'celsius'), 11)
 mean_temp = utils.mean(temps)
 ```
 
-**Want more?** → [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) - **The ultimate guide!**
+**Want more?** → [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) - **The ultimate guide!**  
+**Need help?** → [QUICK_REFERENCE.md](QUICK_REFERENCE.md) - **Quick lookup!**
 
-## Documentation
+## 📚 Documentation
 
-### 🚀 **[COMPLETE_GUIDE.md](COMPLETE_GUIDE.md)** - **START HERE!**
-**The ultimate guide showing why Unifyt is useful and how to use it**
+### 🌟 Essential Guides (Start Here!)
+- **[WHY_UNIFYT.md](WHY_UNIFYT.md)** ⭐ - **Why you need this library**
+- **[COMPLETE_GUIDE.md](COMPLETE_GUIDE.md)** ⭐ - **The ultimate guide**
+- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** ⭐ - **Quick lookup**
+- **[EXCEPTIONS_GUIDE.md](EXCEPTIONS_GUIDE.md)** ⭐ - **Error handling**
 
 ### 📚 Getting Started
+- **[START_HERE.md](starter documents/START_HERE.md)** - 60-second intro
+- **[QUICKSTART.md](QUICKSTART.md)** - 5-minute tutorial
 - **[GETTING_STARTED.md](GETTING_STARTED.md)** - Comprehensive tutorial
-- **[QUICKSTART.md](QUICKSTART.md)** - 5-minute introduction
 - **[INDEX.md](INDEX.md)** - Complete navigation hub
 
-### 📖 User Documentation
-- **[docs/user_guide.md](docs/user_guide.md)** - Complete usage guide
+### 📖 Reference Documentation
+- **[UNITS_CATALOG.md](starter documents/UNITS_CATALOG.md)** - All 300+ units
 - **[docs/api_reference.md](docs/api_reference.md)** - Full API reference
+- **[docs/user_guide.md](docs/user_guide.md)** - Complete usage guide
 - **[docs/FEATURES.md](docs/FEATURES.md)** - Detailed feature list
 - **[examples/](examples/)** - Practical examples
 
@@ -114,10 +131,10 @@ mean_temp = utils.mean(temps)
 - **[docs/MIGRATION.md](docs/MIGRATION.md)** - Migrating from Pint/Unyt
 
 ### 📋 Project Information
+- **[FINAL_SUMMARY.md](starter documents/FINAL_SUMMARY.md)** - Project summary
 - **[STRUCTURE.md](STRUCTURE.md)** - Project structure
-- **[ORGANIZATION.md](ORGANIZATION.md)** - How the project is organized
-- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Complete overview
-- **[IMPROVEMENTS_SUMMARY.md](IMPROVEMENTS_SUMMARY.md)** - What was improved
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute
 
 ## Examples
 
