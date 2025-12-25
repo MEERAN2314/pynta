@@ -1,13 +1,13 @@
-# Pynta Examples
+# Unifyt Examples
 
-This directory contains example scripts demonstrating various features of the Pynta library.
+This directory contains example scripts demonstrating various features of the Unifyt library.
 
 ## Running Examples
 
-Make sure Pynta is installed:
+Make sure Unifyt is installed:
 
 ```bash
-pip install pynta
+pip install unifyt
 ```
 
 Then run any example:
@@ -101,7 +101,7 @@ Or run all examples at once:
 9. Performance features
 10. Comparison and validation
 
-**Best for:** Understanding the full capabilities of Pynta
+**Best for:** Understanding the full capabilities of Unifyt
 
 ## Learning Path
 
@@ -123,7 +123,7 @@ Or run all examples at once:
 
 ### Simple Conversion
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 
 distance = Quantity(100, 'meter')
 distance_km = distance.to('kilometer')
@@ -132,7 +132,7 @@ print(distance_km)  # 0.1 kilometer
 
 ### Using Constants
 ```python
-from pynta import Quantity, constants
+from unifyt import Quantity, constants
 
 mass = Quantity(1, 'kilogram')
 energy = mass * constants.c ** 2
@@ -142,7 +142,7 @@ print(energy)  # E = mc²
 ### Array Operations
 ```python
 import numpy as np
-from pynta import Quantity, utils
+from unifyt import Quantity, utils
 
 temps = utils.linspace(Quantity(0, 'celsius'), Quantity(100, 'celsius'), 11)
 mean_temp = utils.mean(temps)
@@ -151,7 +151,7 @@ print(mean_temp)
 
 ### Custom Units
 ```python
-from pynta import Quantity, UnitRegistry
+from unifyt import Quantity, UnitRegistry
 
 registry = UnitRegistry()
 registry.define('furlong', '220 yard')
@@ -218,7 +218,7 @@ print(distance.to('meter'))
 ### Pattern 1: Data Analysis
 ```python
 import numpy as np
-from pynta import Quantity, utils
+from unifyt import Quantity, utils
 
 # Load data with units
 temperatures = Quantity(np.array([20, 25, 30, 35]), 'celsius')
@@ -230,7 +230,7 @@ std_temp = utils.std(temperatures)
 
 ### Pattern 2: Scientific Computing
 ```python
-from pynta import Quantity, constants
+from unifyt import Quantity, constants
 
 # Physics calculation
 mass = Quantity(1000, 'kilogram')
@@ -253,15 +253,15 @@ total = d1 + d2.to('meter') + d3.to('meter')
 
 ### Import Error
 ```bash
-# Install pynta
-pip install pynta
+# Install unifyt
+pip install unifyt
 ```
 
 ### Unit Not Found
 ```python
 # Check available units in documentation
 # Or define custom unit
-from pynta import UnitRegistry
+from unifyt import UnitRegistry
 registry = UnitRegistry()
 registry.define('myunit', '10 meter')
 ```

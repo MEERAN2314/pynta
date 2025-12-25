@@ -3,8 +3,8 @@
 from __future__ import annotations
 from typing import Union, Any, Optional
 import numpy as np
-from pynta.unit import Unit
-from pynta.dimensions import Dimension
+from unifyt.unit import Unit
+from unifyt.dimensions import Dimension
 
 
 class Quantity:

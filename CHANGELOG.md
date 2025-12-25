@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2024-12-24
 
 ### Added
-- Initial release of Pynta
+- Initial release of Unifyt
 - Core `Quantity` class for representing values with units
 - `Unit` class for unit management and conversions
 - `Dimension` class for tracking physical dimensions
@@ -97,5 +97,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Optimized conversion calculations
 - 2-5x faster than Pint for array operations
 
-[Unreleased]: https://github.com/yourusername/pynta/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/yourusername/pynta/releases/tag/v0.1.0
+[Unreleased]: https://github.com/yourusername/unifyt/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/yourusername/unifyt/releases/tag/v0.1.0

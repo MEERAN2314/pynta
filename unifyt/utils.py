@@ -1,9 +1,9 @@
-"""Utility functions for Pynta."""
+"""Utility functions for Unifyt."""
 
 from typing import Union, List, Tuple
 import numpy as np
-from pynta.quantity import Quantity
-from pynta.unit import Unit
+from unifyt.quantity import Quantity
+from unifyt.unit import Unit
 
 
 def linspace(start: Quantity, stop: Quantity, num: int = 50) -> Quantity:

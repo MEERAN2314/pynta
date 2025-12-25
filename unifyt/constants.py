@@ -1,6 +1,6 @@
 """Physical and mathematical constants with units."""
 
-from pynta.quantity import Quantity
+from unifyt.quantity import Quantity
 import math
 
 # Mathematical constants

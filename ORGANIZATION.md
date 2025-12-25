@@ -1,12 +1,12 @@
-# Pynta Project Organization
+# Unifyt Project Organization
 
-This document explains how the Pynta project is organized and maintained.
+This document explains how the Unifyt project is organized and maintained.
 
 ## Quick Navigation
 
 | Need | File |
 |------|------|
-| **Start using Pynta** | [GETTING_STARTED.md](GETTING_STARTED.md) |
+| **Start using Unifyt** | [GETTING_STARTED.md](GETTING_STARTED.md) |
 | **5-minute intro** | [QUICKSTART.md](QUICKSTART.md) |
 | **Find anything** | [INDEX.md](INDEX.md) |
 | **Project structure** | [STRUCTURE.md](STRUCTURE.md) |
@@ -55,7 +55,7 @@ Technical Documentation (docs/)
 2. **CONTRIBUTING.md** - Learn how to contribute
 3. **PROJECT_SUMMARY.md** - See the big picture
 4. **tests/** - Study the tests
-5. **pynta/** - Read the source code
+5. **unifyt/** - Read the source code
 
 ## Code Organization
 
@@ -76,7 +76,7 @@ Technical Documentation (docs/)
 
 ```python
 # Clean import hierarchy
-pynta/
+unifyt/
   __init__.py          # Exports main API
     ├── quantity       # Core class
     ├── unit           # Unit class
@@ -155,8 +155,8 @@ tests/
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/pynta.git
-cd pynta
+git clone https://github.com/yourusername/unifyt.git
+cd unifyt
 
 # Set up development environment
 make install-dev
@@ -168,7 +168,7 @@ make install-dev
 
 ```bash
 # 1. Make changes to code
-vim pynta/quantity.py
+vim unifyt/quantity.py
 
 # 2. Format code
 make format
@@ -215,7 +215,7 @@ make validate
 
 ### Release Checklist
 
-1. Update version in `setup.py` and `pynta/__init__.py`
+1. Update version in `setup.py` and `unifyt/__init__.py`
 2. Update `CHANGELOG.md`
 3. Run `make all` to verify everything works
 4. Create git tag
@@ -367,7 +367,7 @@ make validate
 
 ## Summary
 
-The Pynta project is organized for:
+The Unifyt project is organized for:
 - **Easy navigation** - Clear file structure
 - **Quick onboarding** - Progressive documentation
 - **High quality** - Comprehensive testing

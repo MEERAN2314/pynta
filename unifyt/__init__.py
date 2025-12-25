@@ -1,18 +1,18 @@
 """
-Pynta - A powerful library for unit conversion and calculations.
+Unifyt - A powerful library for unit conversion and calculations.
 
 Combines the best features of Pint and Unyt for intuitive and high-performance
 unit handling in Python.
 """
 
-from pynta.quantity import Quantity
-from pynta.unit import Unit
-from pynta.unit_registry import UnitRegistry
-from pynta.dimensions import Dimension
-from pynta.context import UnitContext
-from pynta import constants
-from pynta import utils
-from pynta.serialization import (
+from unifyt.quantity import Quantity
+from unifyt.unit import Unit
+from unifyt.unit_registry import UnitRegistry
+from unifyt.dimensions import Dimension
+from unifyt.context import UnitContext
+from unifyt import constants
+from unifyt import utils
+from unifyt.serialization import (
     quantity_to_dict,
     dict_to_quantity,
     quantity_to_json,

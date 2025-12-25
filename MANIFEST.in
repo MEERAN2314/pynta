@@ -3,8 +3,8 @@ include LICENSE
 include CHANGELOG.md
 include CONTRIBUTING.md
 include pyproject.toml
-recursive-include pynta *.py
-recursive-include pynta py.typed
+recursive-include unifyt *.py
+recursive-include unifyt py.typed
 recursive-include docs *.md
 recursive-include examples *.py
 recursive-include tests *.py

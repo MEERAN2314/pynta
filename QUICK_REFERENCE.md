@@ -1,15 +1,15 @@
-# Pynta Quick Reference Card
+# Unifyt Quick Reference Card
 
 ## 🚀 Installation
 
 ```bash
-pip install pynta
+pip install unifyt
 ```
 
 ## 📦 Import
 
 ```python
-from pynta import Quantity, Unit, constants, utils
+from unifyt import Quantity, Unit, constants, utils
 ```
 
 ## 🎯 Basic Usage
@@ -164,7 +164,7 @@ mean_speed = utils.mean(speeds)
 ## 💾 Serialization
 
 ```python
-from pynta.serialization import save_quantity, load_quantity
+from unifyt.serialization import save_quantity, load_quantity
 
 # Save to file
 save_quantity(distance, 'distance.json')
@@ -180,7 +180,7 @@ q = json_to_quantity(json_str)
 ## 🎨 Custom Units
 
 ```python
-from pynta import UnitRegistry
+from unifyt import UnitRegistry
 
 registry = UnitRegistry()
 registry.define('furlong', '220 yard')
@@ -193,7 +193,7 @@ print(distance.to('meter'))
 ## 🔄 Unit Contexts
 
 ```python
-from pynta import UnitContext
+from unifyt import UnitContext
 
 with UnitContext('imperial'):
     # Use imperial units
@@ -286,8 +286,8 @@ registry.define('myunit', '10 meter')
 
 ### Import Error
 ```bash
-# Install pynta
-pip install pynta
+# Install unifyt
+pip install unifyt
 ```
 
 ## 💡 Tips
@@ -295,14 +295,14 @@ pip install pynta
 1. **Always specify units** - Makes code self-documenting
 2. **Use arrays for bulk data** - More efficient
 3. **Leverage constants** - Don't hardcode values
-4. **Check dimensions** - Let Pynta catch errors
+4. **Check dimensions** - Let Unifyt catch errors
 5. **Use utilities** - Built-in functions are optimized
 
 ## 🔗 Quick Links
 
 - **Examples**: [examples/](examples/)
 - **Tests**: [tests/](tests/)
-- **Source**: [pynta/](pynta/)
+- **Source**: [unifyt/](unifyt/)
 - **Docs**: [docs/](docs/)
 
 ---

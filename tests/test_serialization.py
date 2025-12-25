@@ -5,8 +5,8 @@ import json
 import tempfile
 import os
 import numpy as np
-from pynta import Quantity
-from pynta.serialization import (
+from unifyt import Quantity
+from unifyt.serialization import (
     quantity_to_dict,
     dict_to_quantity,
     quantity_to_json,

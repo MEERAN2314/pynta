@@ -1,7 +1,7 @@
 """Tests for UnitContext class."""
 
 import pytest
-from pynta.context import UnitContext, unit_system
+from unifyt.context import UnitContext, unit_system
 
 
 class TestUnitContext:

@@ -1,16 +1,21 @@
-# Pynta Library - Complete Index
+# Unifyt Library - Complete Index
 
-Welcome to Pynta! This index will help you find exactly what you need.
+Welcome to Unifyt! This index will help you find exactly what you need.
 
 ## 🚀 Quick Links
 
-- **New User?** Start with [GETTING_STARTED.md](GETTING_STARTED.md)
+- **New User?** Start with [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) - **The ultimate guide!**
+- **Why Unifyt?** Read [WHY_UNIFYT.md](WHY_UNIFYT.md) - **See the value!**
 - **5-Minute Intro?** Read [QUICKSTART.md](QUICKSTART.md)
 - **Want Examples?** Check [examples/](examples/)
 - **Need API Docs?** See [docs/api_reference.md](docs/api_reference.md)
 - **Performance Tips?** Read [docs/PERFORMANCE.md](docs/PERFORMANCE.md)
 
 ## 📚 Documentation
+
+### 🌟 Essential Reading
+- [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) - **Complete usage guide with real-world examples**
+- [WHY_UNIFYT.md](WHY_UNIFYT.md) - **Why Unifyt is useful and valuable**
 
 ### Getting Started
 - [GETTING_STARTED.md](GETTING_STARTED.md) - Comprehensive getting started guide
@@ -39,16 +44,16 @@ Welcome to Pynta! This index will help you find exactly what you need.
 
 ## 💻 Code
 
-### Core Library (`pynta/`)
-- [pynta/__init__.py](pynta/__init__.py) - Package initialization
-- [pynta/quantity.py](pynta/quantity.py) - Quantity class (core functionality)
-- [pynta/unit.py](pynta/unit.py) - Unit class (100+ units)
-- [pynta/dimensions.py](pynta/dimensions.py) - Dimension tracking
-- [pynta/unit_registry.py](pynta/unit_registry.py) - Custom unit management
-- [pynta/context.py](pynta/context.py) - Unit system contexts
-- [pynta/constants.py](pynta/constants.py) - Physical constants (30+)
-- [pynta/utils.py](pynta/utils.py) - Utility functions (15+)
-- [pynta/serialization.py](pynta/serialization.py) - JSON/pickle support
+### Core Library (`unifyt/`)
+- [unifyt/__init__.py](unifyt/__init__.py) - Package initialization
+- [unifyt/quantity.py](unifyt/quantity.py) - Quantity class (core functionality)
+- [unifyt/unit.py](unifyt/unit.py) - Unit class (100+ units)
+- [unifyt/dimensions.py](unifyt/dimensions.py) - Dimension tracking
+- [unifyt/unit_registry.py](unifyt/unit_registry.py) - Custom unit management
+- [unifyt/context.py](unifyt/context.py) - Unit system contexts
+- [unifyt/constants.py](unifyt/constants.py) - Physical constants (30+)
+- [unifyt/utils.py](unifyt/utils.py) - Utility functions (15+)
+- [unifyt/serialization.py](unifyt/serialization.py) - JSON/pickle support
 
 ### Tests (`tests/`)
 - [tests/test_quantity.py](tests/test_quantity.py) - Quantity tests
@@ -96,13 +101,13 @@ Welcome to Pynta! This index will help you find exactly what you need.
 
 ### For Scientists/Engineers
 1. Check [examples/scientific_calculations.py](examples/scientific_calculations.py)
-2. Review [pynta/constants.py](pynta/constants.py) for constants
+2. Review [unifyt/constants.py](unifyt/constants.py) for constants
 3. Read [docs/FEATURES.md](docs/FEATURES.md)
 4. Explore [examples/advanced_features.py](examples/advanced_features.py)
 
 ### For Data Analysts
 1. Study [examples/array_operations.py](examples/array_operations.py)
-2. Learn [pynta/utils.py](pynta/utils.py) utilities
+2. Learn [unifyt/utils.py](unifyt/utils.py) utilities
 3. Check [docs/PERFORMANCE.md](docs/PERFORMANCE.md)
 4. Review statistical functions
 
@@ -115,20 +120,20 @@ Welcome to Pynta! This index will help you find exactly what you need.
 ## 🔍 Find By Topic
 
 ### Units
-- **Basic units**: [pynta/unit.py](pynta/unit.py) - Lines 20-150
+- **Basic units**: [unifyt/unit.py](unifyt/unit.py) - Lines 20-150
 - **Unit conversions**: [docs/user_guide.md](docs/user_guide.md) - "Unit Conversions"
 - **Custom units**: [examples/custom_units.py](examples/custom_units.py)
 - **All supported units**: [README.md](README.md) - "Supported Units"
 
 ### Constants
-- **Physical constants**: [pynta/constants.py](pynta/constants.py)
+- **Physical constants**: [unifyt/constants.py](unifyt/constants.py)
 - **Using constants**: [examples/advanced_features.py](examples/advanced_features.py)
 - **Constants list**: [docs/api_reference.md](docs/api_reference.md) - "Constants"
 
 ### Arrays
 - **Array operations**: [examples/array_operations.py](examples/array_operations.py)
 - **NumPy integration**: [docs/user_guide.md](docs/user_guide.md) - "Array Operations"
-- **Utility functions**: [pynta/utils.py](pynta/utils.py)
+- **Utility functions**: [unifyt/utils.py](unifyt/utils.py)
 
 ### Calculations
 - **Physics**: [examples/scientific_calculations.py](examples/scientific_calculations.py)
@@ -141,7 +146,7 @@ Welcome to Pynta! This index will help you find exactly what you need.
 - **Tips**: [docs/PERFORMANCE.md](docs/PERFORMANCE.md) - "Performance Tips"
 
 ### Serialization
-- **JSON/Pickle**: [pynta/serialization.py](pynta/serialization.py)
+- **JSON/Pickle**: [unifyt/serialization.py](unifyt/serialization.py)
 - **Examples**: [examples/advanced_features.py](examples/advanced_features.py)
 - **API**: [docs/api_reference.md](docs/api_reference.md) - "Serialization"
 
@@ -149,7 +154,7 @@ Welcome to Pynta! This index will help you find exactly what you need.
 
 ### Installation
 ```bash
-pip install pynta
+pip install unifyt
 # or
 ./setup_dev.sh
 ```
@@ -204,7 +209,7 @@ See: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 💡 Tips
 
-- **New to Pynta?** Start with [GETTING_STARTED.md](GETTING_STARTED.md)
+- **New to Unifyt?** Start with [GETTING_STARTED.md](GETTING_STARTED.md)
 - **Need quick help?** Check [QUICKSTART.md](QUICKSTART.md)
 - **Looking for examples?** Browse [examples/](examples/)
 - **Want to contribute?** Read [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -221,7 +226,7 @@ See: [CONTRIBUTING.md](CONTRIBUTING.md)
 ## 🎉 Quick Start
 
 ```python
-from pynta import Quantity, constants, utils
+from unifyt import Quantity, constants, utils
 
 # Basic usage
 distance = Quantity(100, 'meter')

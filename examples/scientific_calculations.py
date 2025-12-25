@@ -1,6 +1,6 @@
-"""Scientific calculation examples using Pynta."""
+"""Scientific calculation examples using Unifyt."""
 
-from pynta import Quantity
+from unifyt import Quantity
 import numpy as np
 
 print("=== Physics: Kinetic Energy ===")

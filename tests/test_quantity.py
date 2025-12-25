@@ -2,7 +2,7 @@
 
 import pytest
 import numpy as np
-from pynta import Quantity, Unit
+from unifyt import Quantity, Unit
 
 
 class TestQuantityCreation:

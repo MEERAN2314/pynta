@@ -1,8 +1,8 @@
-# Pynta Library - Improvements Summary
+# Unifyt Library - Improvements Summary
 
 ## Overview
 
-The Pynta library has been significantly enhanced from a basic unit conversion library to a comprehensive, production-ready scientific computing tool. Here's what was improved:
+The Unifyt library has been significantly enhanced from a basic unit conversion library to a comprehensive, production-ready scientific computing tool. Here's what was improved:
 
 ## Major Enhancements
 
@@ -247,7 +247,7 @@ Complete serialization capabilities:
 
 1. **Use Physical Constants**
    ```python
-   from pynta import constants
+   from unifyt import constants
    energy = mass * constants.c ** 2
    ```
 
@@ -325,7 +325,7 @@ Complete serialization capabilities:
 
 ## Conclusion
 
-The Pynta library has been transformed from a basic unit conversion tool into a comprehensive, production-ready scientific computing library. With 100+ units, 30+ physical constants, extensive utility functions, serialization support, and comprehensive documentation, it's now a powerful tool for scientists, engineers, and data analysts.
+The Unifyt library has been transformed from a basic unit conversion tool into a comprehensive, production-ready scientific computing library. With 100+ units, 30+ physical constants, extensive utility functions, serialization support, and comprehensive documentation, it's now a powerful tool for scientists, engineers, and data analysts.
 
 ### Key Achievements:
 ✅ **7x more units** - Comprehensive coverage

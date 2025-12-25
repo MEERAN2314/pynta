@@ -1,7 +1,7 @@
 """Unit registry for managing custom units and unit systems."""
 
 from typing import Dict, Optional
-from pynta.unit import Unit
+from unifyt.unit import Unit
 
 
 class UnitRegistry:

@@ -1,14 +1,14 @@
-# Pynta Project Summary
+# Unifyt Project Summary
 
 ## Overview
 
-Pynta is a comprehensive Python library for physical quantity manipulation and unit conversion. It combines the best features of Pint and Unyt while adding significant enhancements in performance, usability, and functionality.
+Unifyt is a comprehensive Python library for physical quantity manipulation and unit conversion. It combines the best features of Pint and Unyt while adding significant enhancements in performance, usability, and functionality.
 
 ## Project Structure
 
 ```
-pynta/
-├── pynta/                      # Main package
+unifyt/
+├── unifyt/                      # Main package
 │   ├── __init__.py            # Package initialization
 │   ├── quantity.py            # Quantity class (core)
 │   ├── unit.py                # Unit class with 100+ units
@@ -283,10 +283,10 @@ Inspired by:
 
 ```bash
 # Install
-pip install pynta
+pip install unifyt
 
 # Quick test
-python -c "from pynta import Quantity; print(Quantity(100, 'meter').to('kilometer'))"
+python -c "from unifyt import Quantity; print(Quantity(100, 'meter').to('kilometer'))"
 
 # Run examples
 ./run_examples.sh

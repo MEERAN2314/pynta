@@ -1,17 +1,17 @@
-# Pynta Quick Start Guide
+# Unifyt Quick Start Guide
 
-Get up and running with Pynta in 5 minutes!
+Get up and running with Unifyt in 5 minutes!
 
 ## Installation
 
 ```bash
-pip install pynta
+pip install unifyt
 ```
 
 ## Your First Quantity
 
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 
 # Create a quantity
 distance = Quantity(100, 'meters')
@@ -21,7 +21,7 @@ print(distance)  # 100 meters
 ## Basic Operations
 
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 
 # Create quantities
 distance = Quantity(100, 'meter')
@@ -75,7 +75,7 @@ print(volume)  # 27 meter^3
 
 ```python
 import numpy as np
-from pynta import Quantity
+from unifyt import Quantity
 
 # Create array quantity
 distances = Quantity(np.array([100, 200, 300]), 'meter')
@@ -147,7 +147,7 @@ print(f"Mean temperature: {mean_temp}")
 
 1. Always specify units - it makes your code self-documenting
 2. Use `.to()` for explicit conversions
-3. Let Pynta catch unit errors early in development
+3. Let Unifyt catch unit errors early in development
 4. Use NumPy arrays for bulk operations
 5. Check the examples directory for inspiration
 

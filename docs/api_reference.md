@@ -1,4 +1,4 @@
-# Pynta API Reference
+# Unifyt API Reference
 
 ## Core Classes
 
@@ -281,7 +281,7 @@ Get the current unit system.
 Default UnitRegistry instance available at module level.
 
 ```python
-from pynta import default_registry
+from unifyt import default_registry
 ```
 
 ## Exceptions
@@ -295,8 +295,8 @@ Raised when:
 
 ## Type Hints
 
-Pynta includes full type hints for better IDE support. Import types:
+Unifyt includes full type hints for better IDE support. Import types:
 
 ```python
-from pynta import Quantity, Unit, Dimension, UnitRegistry, UnitContext
+from unifyt import Quantity, Unit, Dimension, UnitRegistry, UnitContext
 ```

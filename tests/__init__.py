@@ -1,1 +1,1 @@
-"""Test suite for pynta library."""
+"""Test suite for unifyt library."""

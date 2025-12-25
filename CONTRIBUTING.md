@@ -1,6 +1,6 @@
-# Contributing to Pynta
+# Contributing to Unifyt
 
-Thank you for your interest in contributing to Pynta! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to Unifyt! This document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
@@ -27,8 +27,8 @@ Feature requests are welcome! Please:
 
 1. **Fork the repository**
    ```bash
-   git clone https://github.com/yourusername/pynta.git
-   cd pynta
+   git clone https://github.com/yourusername/unifyt.git
+   cd unifyt
    ```
 
 2. **Create a virtual environment**
@@ -61,14 +61,14 @@ Feature requests are welcome! Please:
 7. **Check code quality**
    ```bash
    # Format code
-   black pynta/ tests/
-   isort pynta/ tests/
+   black unifyt/ tests/
+   isort unifyt/ tests/
    
    # Lint
-   flake8 pynta/
+   flake8 unifyt/
    
    # Type check
-   mypy pynta/
+   mypy unifyt/
    ```
 
 8. **Commit your changes**
@@ -115,8 +115,8 @@ Feature requests are welcome! Please:
 ## Project Structure
 
 ```
-pynta/
-├── pynta/              # Main package
+unifyt/
+├── unifyt/              # Main package
 │   ├── __init__.py
 │   ├── quantity.py     # Quantity class
 │   ├── unit.py         # Unit class
@@ -138,7 +138,7 @@ pytest tests/ -v
 
 Run with coverage:
 ```bash
-pytest tests/ --cov=pynta --cov-report=html
+pytest tests/ --cov=unifyt --cov-report=html
 ```
 
 Run specific tests:
@@ -159,7 +159,7 @@ cd docs
 
 (For maintainers)
 
-1. Update version in `setup.py` and `pynta/__init__.py`
+1. Update version in `setup.py` and `unifyt/__init__.py`
 2. Update `CHANGELOG.md`
 3. Create a git tag
 4. Build and upload to PyPI

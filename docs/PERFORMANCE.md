@@ -1,10 +1,10 @@
-# Pynta Performance Guide
+# Unifyt Performance Guide
 
 ## Performance Features
 
 ### 1. Unit Caching
 
-Pynta caches parsed units to avoid repeated parsing overhead:
+Unifyt caches parsed units to avoid repeated parsing overhead:
 
 ```python
 # First call parses the unit
@@ -222,7 +222,7 @@ stats.print_stats(10)
 
 ## Comparison with Other Libraries
 
-Pynta is designed to be:
+Unifyt is designed to be:
 - **Faster than Pint** for array operations (vectorized)
 - **Comparable to Unyt** in performance
 - **More feature-rich** than both
@@ -243,12 +243,12 @@ Planned improvements:
 
 ## Profiling Your Application
 
-To profile Pynta usage in your application:
+To profile Unifyt usage in your application:
 
 ```python
 import time
 import numpy as np
-from pynta import Quantity
+from unifyt import Quantity
 
 # Measure creation time
 start = time.time()

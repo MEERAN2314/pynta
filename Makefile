@@ -1,9 +1,9 @@
-# Makefile for Pynta development
+# Makefile for Unifyt development
 
 .PHONY: help install install-dev test test-cov clean format lint check examples docs validate all
 
 help:
-	@echo "Pynta Development Commands:"
+	@echo "Unifyt Development Commands:"
 	@echo ""
 	@echo "  make install      - Install package"
 	@echo "  make install-dev  - Install with development dependencies"
@@ -28,7 +28,7 @@ test:
 	pytest tests/ -v
 
 test-cov:
-	pytest tests/ -v --cov=pynta --cov-report=html --cov-report=term
+	pytest tests/ -v --cov=unifyt --cov-report=html --cov-report=term
 
 clean:
 	@echo "Cleaning temporary files..."
@@ -46,14 +46,14 @@ clean:
 
 format:
 	@echo "Formatting code..."
-	black pynta/ tests/ examples/
-	isort pynta/ tests/ examples/
+	black unifyt/ tests/ examples/
+	isort unifyt/ tests/ examples/
 	@echo "Formatting complete!"
 
 lint:
 	@echo "Running linters..."
-	flake8 pynta/ --max-line-length=100 --extend-ignore=E203,W503
-	mypy pynta/ --ignore-missing-imports
+	flake8 unifyt/ --max-line-length=100 --extend-ignore=E203,W503
+	mypy unifyt/ --ignore-missing-imports
 	@echo "Linting complete!"
 
 check: format lint test

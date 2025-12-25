@@ -1,6 +1,6 @@
 """Examples of defining and using custom units."""
 
-from pynta import Quantity, UnitRegistry
+from unifyt import Quantity, UnitRegistry
 
 # Create a unit registry
 registry = UnitRegistry()

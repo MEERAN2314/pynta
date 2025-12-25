@@ -1,7 +1,7 @@
-"""Examples of array operations with Pynta."""
+"""Examples of array operations with Unifyt."""
 
 import numpy as np
-from pynta import Quantity
+from unifyt import Quantity
 
 print("=== Creating Array Quantities ===")
 # Temperature measurements

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 from typing import Dict, Optional
-from pynta.dimensions import Dimension
+from unifyt.dimensions import Dimension
 
 
 class Unit:

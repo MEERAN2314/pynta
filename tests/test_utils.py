@@ -2,7 +2,7 @@
 
 import pytest
 import numpy as np
-from pynta import Quantity, utils
+from unifyt import Quantity, utils
 
 
 class TestArrayCreation:

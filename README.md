@@ -1,6 +1,24 @@
-# Pynta
+# Unifyt
 
 A powerful and easy-to-use Python library for unit conversion and calculations, combining the best features of Pint and Unyt.
+
+## 🌟 Why Unifyt?
+
+Unifyt solves the universal problem of working with physical units in scientific computing, engineering, and data analysis. It prevents errors, saves time, and makes your code clear and maintainable.
+
+**Before Unifyt:**
+```python
+distance = 100  # meters? kilometers? 🤔
+speed = distance / 10  # What unit is this? 😕
+```
+
+**With Unifyt:**
+```python
+from unifyt import Quantity
+distance = Quantity(100, 'meter')
+speed = distance / Quantity(10, 'second')  # Automatically: 10 m/s ✨
+print(speed.to('kilometer/hour'))  # 36.0 km/h 🎯
+```
 
 ## Features
 
@@ -19,13 +37,19 @@ A powerful and easy-to-use Python library for unit conversion and calculations, 
 ## Installation
 
 ```bash
-pip install pynta
+pip install unifyt
 ```
 
-## Quick Start
+## 🚀 Quick Start
+
+**New to Unifyt?** → [START_HERE.md](START_HERE.md) - **Get started in 60 seconds!**
+
+```bash
+pip install unifyt
+```
 
 ```python
-from pynta import Quantity, constants, utils
+from unifyt import Quantity, constants, utils
 import numpy as np
 
 # Create quantities with units
@@ -54,7 +78,12 @@ temps = utils.linspace(Quantity(0, 'celsius'), Quantity(100, 'celsius'), 11)
 mean_temp = utils.mean(temps)
 ```
 
+**Want more?** → [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) - **The ultimate guide!**
+
 ## Documentation
+
+### 🚀 **[COMPLETE_GUIDE.md](COMPLETE_GUIDE.md)** - **START HERE!**
+**The ultimate guide showing why Unifyt is useful and how to use it**
 
 ### 📚 Getting Started
 - **[GETTING_STARTED.md](GETTING_STARTED.md)** - Comprehensive tutorial
@@ -93,8 +122,8 @@ Check out the `examples/` directory for more usage examples:
 
 ```bash
 # Clone the repository
-git clone https://github.com/MEERAN2314/pynta.git
-cd pynta
+git clone https://github.com/MEERAN2314/unifyt.git
+cd unifyt
 
 # Create virtual environment
 python -m venv venv
@@ -114,13 +143,13 @@ pytest tests/
 
 ```bash
 # Run linting
-flake8 pynta/
+flake8 unifyt/
 
 # Run type checking
-mypy pynta/
+mypy unifyt/
 
 # Format code
-black pynta/ tests/
+black unifyt/ tests/
 ```
 
 ## Contributing
@@ -155,7 +184,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 Access fundamental constants with proper units:
 
 ```python
-from pynta import constants
+from unifyt import constants
 
 print(constants.c)          # Speed of light
 print(constants.h)          # Planck constant
@@ -165,6 +194,17 @@ print(constants.g)          # Standard gravity
 print(constants.AU)         # Astronomical unit
 print(constants.M_sun)      # Solar mass
 ```
+
+## 🎯 Real-World Applications
+
+- **Physics**: Kinetic energy, gravitational force, E=mc²
+- **Engineering**: Flow rates, power calculations, pressure conversions
+- **Chemistry**: Concentration calculations, ideal gas law
+- **Data Analysis**: Sensor data, environmental monitoring
+- **Astronomy**: Light-year distances, escape velocity
+- **Education**: Teaching physics, chemistry labs
+
+See [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) for detailed examples!
 
 ## Acknowledgments
 

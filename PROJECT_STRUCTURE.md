@@ -1,9 +1,9 @@
-# Pynta Project Structure
+# Unifyt Project Structure
 
 ```
-pynta/
+unifyt/
 │
-├── pynta/                      # Main package directory
+├── unifyt/                      # Main package directory
 │   ├── __init__.py            # Package initialization, exports main classes
 │   ├── quantity.py            # Quantity class - core functionality
 │   ├── unit.py                # Unit class - unit management
@@ -50,7 +50,7 @@ pynta/
 
 ## Directory Descriptions
 
-### `/pynta` - Main Package
+### `/unifyt` - Main Package
 
 The core library implementation:
 
@@ -115,30 +115,30 @@ Complete documentation:
 ## Module Dependencies
 
 ```
-pynta/__init__.py
+unifyt/__init__.py
     ├── imports: quantity.Quantity
     ├── imports: unit.Unit
     ├── imports: dimensions.Dimension
     ├── imports: unit_registry.UnitRegistry
     └── imports: context.UnitContext
 
-pynta/quantity.py
+unifyt/quantity.py
     ├── imports: unit.Unit
     ├── imports: dimensions.Dimension
     └── depends on: numpy
 
-pynta/unit.py
+unifyt/unit.py
     ├── imports: dimensions.Dimension
     └── no external dependencies
 
-pynta/dimensions.py
+unifyt/dimensions.py
     └── no external dependencies
 
-pynta/unit_registry.py
+unifyt/unit_registry.py
     ├── imports: unit.Unit
     └── no external dependencies
 
-pynta/context.py
+unifyt/context.py
     └── no external dependencies
 ```
 
@@ -148,7 +148,7 @@ When installed via pip, the package structure is:
 
 ```
 site-packages/
-└── pynta/
+└── unifyt/
     ├── __init__.py
     ├── quantity.py
     ├── unit.py
@@ -161,11 +161,11 @@ site-packages/
 ## Development Workflow
 
 1. **Setup**: Install with `pip install -e ".[dev]"`
-2. **Code**: Edit files in `/pynta`
+2. **Code**: Edit files in `/unifyt`
 3. **Test**: Run `pytest tests/`
-4. **Format**: Run `black pynta/ tests/`
-5. **Lint**: Run `flake8 pynta/`
-6. **Type Check**: Run `mypy pynta/`
+4. **Format**: Run `black unifyt/ tests/`
+5. **Lint**: Run `flake8 unifyt/`
+6. **Type Check**: Run `mypy unifyt/`
 7. **Document**: Update docs in `/docs`
 8. **Example**: Add examples to `/examples`
 

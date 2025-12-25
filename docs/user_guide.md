@@ -1,13 +1,13 @@
-# Pynta User Guide
+# Unifyt User Guide
 
 ## Introduction
 
-Pynta is a powerful Python library for working with physical quantities and units. It combines the best features of Pint and Unyt to provide an intuitive, high-performance solution for unit conversion and calculations.
+Unifyt is a powerful Python library for working with physical quantities and units. It combines the best features of Pint and Unyt to provide an intuitive, high-performance solution for unit conversion and calculations.
 
 ## Installation
 
 ```bash
-pip install pynta
+pip install unifyt
 ```
 
 ## Basic Concepts
@@ -17,7 +17,7 @@ pip install pynta
 A `Quantity` represents a numerical value with a physical unit:
 
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 
 distance = Quantity(100, 'meters')
 time = Quantity(9.58, 'seconds')
@@ -28,7 +28,7 @@ time = Quantity(9.58, 'seconds')
 Units can be simple (like 'meter') or compound (like 'meter/second'):
 
 ```python
-from pynta import Unit
+from unifyt import Unit
 
 length_unit = Unit('meter')
 velocity_unit = Unit('meter/second')
@@ -95,7 +95,7 @@ print(d1 > Quantity(500, 'meter'))  # True
 ### Custom Units
 
 ```python
-from pynta import UnitRegistry
+from unifyt import UnitRegistry
 
 registry = UnitRegistry()
 registry.define('furlong', '220 yard')
@@ -108,7 +108,7 @@ distance = Quantity(1, 'furlong')
 ### Unit Systems
 
 ```python
-from pynta import UnitContext
+from unifyt import UnitContext
 
 # Use context manager for unit systems
 with UnitContext('imperial'):
@@ -174,7 +174,7 @@ mean_temp = Quantity(np.mean(temps_celsius.magnitude), 'celsius')
 
 1. **Always specify units**: Make your code self-documenting
 2. **Use appropriate precision**: Consider floating-point limitations
-3. **Check dimensionality**: Let Pynta catch unit errors early
+3. **Check dimensionality**: Let Unifyt catch unit errors early
 4. **Leverage array operations**: Use NumPy for efficient calculations
 5. **Define custom units**: Create domain-specific units for clarity
 
@@ -205,4 +205,4 @@ except ValueError as e:
 
 - Check out the [API Reference](api_reference.md) for detailed documentation
 - Explore [Examples](../examples/) for more use cases
-- Read about [Contributing](../CONTRIBUTING.md) to help improve Pynta
+- Read about [Contributing](../CONTRIBUTING.md) to help improve Unifyt

@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="pynta",
+    name="unifyt",
     version="0.1.0",
     author="Your Name",
     author_email="your.email@example.com",
     description="A powerful library for unit conversion and calculations",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/pynta",
+    url="https://github.com/MEERAN2314/unifyt",
     packages=find_packages(exclude=["tests", "tests.*", "examples"]),
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -42,6 +42,6 @@ setup(
         ],
     },
     package_data={
-        "pynta": ["py.typed", "data/*.txt"],
+        "unifyt": ["py.typed", "data/*.txt"],
     },
 )

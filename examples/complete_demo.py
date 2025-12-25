@@ -1,13 +1,13 @@
-"""Complete demonstration of Pynta capabilities."""
+"""Complete demonstration of Unifyt capabilities."""
 
 import numpy as np
-from pynta import Quantity, Unit, UnitRegistry, constants, utils
-from pynta.serialization import save_quantity, load_quantity, quantity_to_json
+from unifyt import Quantity, Unit, UnitRegistry, constants, utils
+from unifyt.serialization import save_quantity, load_quantity, quantity_to_json
 import tempfile
 import os
 
 print("=" * 70)
-print("PYNTA - Complete Feature Demonstration")
+print("UNIFYT - Complete Feature Demonstration")
 print("=" * 70)
 
 # ============================================================================

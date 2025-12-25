@@ -1,4 +1,4 @@
-# Pynta Project Checklist
+# Unifyt Project Checklist
 
 ## ✅ Project Completeness Checklist
 

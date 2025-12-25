@@ -1,8 +1,8 @@
 """Tests for Unit class."""
 
 import pytest
-from pynta import Unit
-from pynta.dimensions import Dimension
+from unifyt import Unit
+from unifyt.dimensions import Dimension
 
 
 class TestUnitCreation:

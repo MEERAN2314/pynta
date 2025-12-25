@@ -1,29 +1,29 @@
 #!/bin/bash
 # Validate project structure and code quality
 
-echo "=== Pynta Project Validation ==="
+echo "=== Unifyt Project Validation ==="
 echo ""
 
 # Check Python syntax
 echo "1. Checking Python syntax..."
-python -m py_compile pynta/*.py 2>/dev/null && echo "   ✓ Core library syntax OK" || echo "   ✗ Syntax errors in core library"
+python -m py_compile unifyt/*.py 2>/dev/null && echo "   ✓ Core library syntax OK" || echo "   ✗ Syntax errors in core library"
 python -m py_compile tests/*.py 2>/dev/null && echo "   ✓ Tests syntax OK" || echo "   ✗ Syntax errors in tests"
 python -m py_compile examples/*.py 2>/dev/null && echo "   ✓ Examples syntax OK" || echo "   ✗ Syntax errors in examples"
 
 # Check imports
 echo ""
 echo "2. Checking imports..."
-python -c "import pynta" 2>/dev/null && echo "   ✓ Package imports successfully" || echo "   ✗ Import errors"
-python -c "from pynta import Quantity, Unit, constants, utils" 2>/dev/null && echo "   ✓ Main exports OK" || echo "   ✗ Export errors"
+python -c "import unifyt" 2>/dev/null && echo "   ✓ Package imports successfully" || echo "   ✗ Import errors"
+python -c "from unifyt import Quantity, Unit, constants, utils" 2>/dev/null && echo "   ✓ Main exports OK" || echo "   ✗ Export errors"
 
 # Check file structure
 echo ""
 echo "3. Checking file structure..."
-[ -f "pynta/__init__.py" ] && echo "   ✓ pynta/__init__.py exists" || echo "   ✗ Missing pynta/__init__.py"
-[ -f "pynta/quantity.py" ] && echo "   ✓ pynta/quantity.py exists" || echo "   ✗ Missing pynta/quantity.py"
-[ -f "pynta/unit.py" ] && echo "   ✓ pynta/unit.py exists" || echo "   ✗ Missing pynta/unit.py"
-[ -f "pynta/constants.py" ] && echo "   ✓ pynta/constants.py exists" || echo "   ✗ Missing pynta/constants.py"
-[ -f "pynta/utils.py" ] && echo "   ✓ pynta/utils.py exists" || echo "   ✗ Missing pynta/utils.py"
+[ -f "unifyt/__init__.py" ] && echo "   ✓ unifyt/__init__.py exists" || echo "   ✗ Missing unifyt/__init__.py"
+[ -f "unifyt/quantity.py" ] && echo "   ✓ unifyt/quantity.py exists" || echo "   ✗ Missing unifyt/quantity.py"
+[ -f "unifyt/unit.py" ] && echo "   ✓ unifyt/unit.py exists" || echo "   ✗ Missing unifyt/unit.py"
+[ -f "unifyt/constants.py" ] && echo "   ✓ unifyt/constants.py exists" || echo "   ✗ Missing unifyt/constants.py"
+[ -f "unifyt/utils.py" ] && echo "   ✓ unifyt/utils.py exists" || echo "   ✗ Missing unifyt/utils.py"
 
 # Check documentation
 echo ""

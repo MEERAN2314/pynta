@@ -1,4 +1,4 @@
-# Pynta Features
+# Unifyt Features
 
 ## Core Features
 
@@ -91,7 +91,7 @@ with UnitContext('imperial'):
 Full type hints for IDE support:
 
 ```python
-from pynta import Quantity, Unit
+from unifyt import Quantity, Unit
 
 def calculate_speed(distance: Quantity, time: Quantity) -> Quantity:
     return distance / time

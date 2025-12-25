@@ -1,7 +1,7 @@
 """Tests for physical constants."""
 
 import pytest
-from pynta import constants, Quantity
+from unifyt import constants, Quantity
 
 
 class TestPhysicalConstants:

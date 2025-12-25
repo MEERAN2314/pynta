@@ -1,19 +1,19 @@
-# Getting Started with Pynta
+# Getting Started with Unifyt
 
-Welcome to Pynta! This guide will help you get up and running in minutes.
+Welcome to Unifyt! This guide will help you get up and running in minutes.
 
 ## Installation
 
 ### From PyPI (when published)
 ```bash
-pip install pynta
+pip install unifyt
 ```
 
 ### From Source (Development)
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pynta.git
-cd pynta
+git clone https://github.com/yourusername/unifyt.git
+cd unifyt
 
 # Install in development mode
 pip install -e .
@@ -22,12 +22,12 @@ pip install -e .
 ./setup_dev.sh
 ```
 
-## Your First Pynta Program
+## Your First Unifyt Program
 
-Create a file called `first_pynta.py`:
+Create a file called `first_unifyt.py`:
 
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 
 # Create a quantity
 distance = Quantity(100, 'meter')
@@ -46,7 +46,7 @@ print(f"Speed in km/h: {speed.to('kilometer/hour')}")
 
 Run it:
 ```bash
-python first_pynta.py
+python first_unifyt.py
 ```
 
 Output:
@@ -64,7 +64,7 @@ Speed in km/h: 36.0 kilometer / hour
 A `Quantity` is a value with a unit:
 
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 
 # Create quantities
 length = Quantity(5, 'meter')
@@ -123,7 +123,7 @@ Work with NumPy arrays:
 
 ```python
 import numpy as np
-from pynta import Quantity
+from unifyt import Quantity
 
 # Create array quantity
 distances = Quantity(np.array([100, 200, 300]), 'meter')
@@ -143,7 +143,7 @@ speeds = distances / times
 Use built-in constants:
 
 ```python
-from pynta import constants
+from unifyt import constants
 
 # Access constants
 print(constants.c)    # Speed of light
@@ -160,7 +160,7 @@ energy = mass * constants.c ** 2  # E = mc²
 Helpful utilities for common tasks:
 
 ```python
-from pynta import utils
+from unifyt import utils
 
 # Create ranges
 temps = utils.linspace(
@@ -180,7 +180,7 @@ std = utils.std(data)
 ### Physics Calculations
 
 ```python
-from pynta import Quantity, constants
+from unifyt import Quantity, constants
 
 # Kinetic energy: E = 1/2 * m * v²
 mass = Quantity(1000, 'kilogram')
@@ -216,7 +216,7 @@ print(f"Power: {power.to('watt')}")
 
 ```python
 import numpy as np
-from pynta import Quantity, utils
+from unifyt import Quantity, utils
 
 # Temperature measurements
 temps = Quantity(
@@ -234,7 +234,7 @@ print(f"Max: {utils.max(temps)}")
 ### Custom Units
 
 ```python
-from pynta import Quantity, UnitRegistry
+from unifyt import Quantity, UnitRegistry
 
 # Create registry
 registry = UnitRegistry()
@@ -304,10 +304,10 @@ distance = Quantity(5, 'kilometer')  # Not 5000 meters
 time = Quantity(2, 'hour')           # Not 7200 seconds
 ```
 
-### 3. Let Pynta Check Dimensions
+### 3. Let Unifyt Check Dimensions
 
 ```python
-# Pynta will catch errors
+# Unifyt will catch errors
 distance = Quantity(100, 'meter')
 time = Quantity(10, 'second')
 
@@ -329,7 +329,7 @@ data = Quantity(np.arange(1000), 'meter')
 
 ```python
 # Use built-in constants
-from pynta import constants
+from unifyt import constants
 
 # Don't hardcode
 # c = 299792458  # m/s
@@ -362,7 +362,7 @@ d1 = Quantity(1, 'kilometer')
 d2 = Quantity(500, 'meter')
 
 # Automatic conversion in operations
-total = d1 + d2  # Pynta handles this
+total = d1 + d2  # Unifyt handles this
 
 # But explicit is better
 total = d1.to('meter') + d2  # Clear intent
@@ -455,7 +455,7 @@ constants.N_A  # Avogadro
 
 1. **Try the examples**: Run `./run_examples.sh`
 2. **Read the user guide**: `docs/user_guide.md`
-3. **Build something**: Apply Pynta to your project
-4. **Contribute**: Help improve Pynta
+3. **Build something**: Apply Unifyt to your project
+4. **Contribute**: Help improve Unifyt
 
-Welcome to the Pynta community! 🚀
+Welcome to the Unifyt community! 🚀

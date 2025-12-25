@@ -23,4 +23,4 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-addopts = "-v --cov=pynta --cov-report=html --cov-report=term"
+addopts = "-v --cov=unifyt --cov-report=html --cov-report=term"

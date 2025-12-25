@@ -1,9 +1,9 @@
-# Pynta Project Structure
+# Unifyt Project Structure
 
 ```
-pynta/
+unifyt/
 │
-├── 📁 pynta/                      # Main package source code
+├── 📁 unifyt/                      # Main package source code
 │   ├── __init__.py               # Package initialization & exports
 │   ├── quantity.py               # Quantity class (core functionality)
 │   ├── unit.py                   # Unit class (100+ units)
@@ -72,7 +72,7 @@ pynta/
 
 ## Directory Descriptions
 
-### 📁 pynta/ - Core Library
+### 📁 unifyt/ - Core Library
 The main package containing all library code:
 - **quantity.py** (200 lines) - Core Quantity class with arithmetic operations
 - **unit.py** (400 lines) - Unit definitions and conversions (100+ units)
@@ -161,7 +161,7 @@ All scripts are executable (chmod +x):
 ## Module Dependencies
 
 ```
-pynta/
+unifyt/
 ├── quantity.py
 │   ├── → unit.py
 │   ├── → dimensions.py

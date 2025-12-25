@@ -1,7 +1,7 @@
 """Tests for Dimension class."""
 
 import pytest
-from pynta.dimensions import Dimension
+from unifyt.dimensions import Dimension
 
 
 class TestDimensionCreation:

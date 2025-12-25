@@ -13,9 +13,9 @@ ureg = pint.UnitRegistry()
 distance = 100 * ureg.meter
 ```
 
-**Pynta:**
+**Unifyt:**
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 distance = Quantity(100, 'meter')
 ```
 
@@ -26,7 +26,7 @@ distance = Quantity(100, 'meter')
 distance_km = distance.to(ureg.kilometer)
 ```
 
-**Pynta:**
+**Unifyt:**
 ```python
 distance_km = distance.to('kilometer')
 ```
@@ -35,7 +35,7 @@ distance_km = distance.to('kilometer')
 
 Both libraries work similarly:
 ```python
-# Both Pint and Pynta
+# Both Pint and Unifyt
 speed = distance / time
 ```
 
@@ -46,16 +46,16 @@ speed = distance / time
 ureg.define('furlong = 220 * yard')
 ```
 
-**Pynta:**
+**Unifyt:**
 ```python
-from pynta import UnitRegistry
+from unifyt import UnitRegistry
 registry = UnitRegistry()
 registry.define('furlong', '220 yard')
 ```
 
 ### Key Differences
 
-1. **No global registry required** - Pynta works without explicit registry
+1. **No global registry required** - Unifyt works without explicit registry
 2. **Simpler API** - Direct Quantity creation
 3. **Better array support** - Optimized for NumPy
 4. **Built-in constants** - Physical constants included
@@ -70,9 +70,9 @@ import unyt
 distance = unyt.unyt_quantity(100, 'meter')
 ```
 
-**Pynta:**
+**Unifyt:**
 ```python
-from pynta import Quantity
+from unifyt import Quantity
 distance = Quantity(100, 'meter')
 ```
 
@@ -84,10 +84,10 @@ import numpy as np
 distances = unyt.unyt_array([100, 200, 300], 'meter')
 ```
 
-**Pynta:**
+**Unifyt:**
 ```python
 import numpy as np
-from pynta import Quantity
+from unifyt import Quantity
 distances = Quantity(np.array([100, 200, 300]), 'meter')
 ```
 
@@ -98,9 +98,9 @@ distances = Quantity(np.array([100, 200, 300]), 'meter')
 distance.to('cgs')
 ```
 
-**Pynta:**
+**Unifyt:**
 ```python
-from pynta import UnitContext
+from unifyt import UnitContext
 with UnitContext('cgs'):
     # Use CGS units
     pass
@@ -122,7 +122,7 @@ with UnitContext('cgs'):
 q = 100 * ureg.meter
 q = unyt.unyt_quantity(100, 'meter')
 
-# New (Pynta)
+# New (Unifyt)
 q = Quantity(100, 'meter')
 ```
 
@@ -133,7 +133,7 @@ q = Quantity(100, 'meter')
 q_km = q.to(ureg.kilometer)
 q_km = q.to('kilometer')
 
-# New (Pynta)
+# New (Unifyt)
 q_km = q.to('kilometer')
 ```
 
@@ -146,7 +146,7 @@ values = [100, 200, 300] * ureg.meter
 # Old (Unyt)
 values = unyt.unyt_array([100, 200, 300], 'meter')
 
-# New (Pynta)
+# New (Unifyt)
 values = Quantity(np.array([100, 200, 300]), 'meter')
 ```
 
@@ -161,14 +161,14 @@ c = constants.c * ureg.meter / ureg.second
 from unyt import physical_constants
 c = physical_constants.speed_of_light
 
-# New (Pynta)
-from pynta import constants
+# New (Unifyt)
+from unifyt import constants
 c = constants.c  # Already has units!
 ```
 
 ## Feature Comparison
 
-| Feature | Pint | Unyt | Pynta |
+| Feature | Pint | Unyt | Unifyt |
 |---------|------|------|-------|
 | Basic units | ✓ | ✓ | ✓ |
 | Custom units | ✓ | ✓ | ✓ |
@@ -185,7 +185,7 @@ Legend: ✓ = Supported, ✓✓ = Well supported, - = Not supported
 ## Tips for Migration
 
 1. **Start with imports**: Replace your import statements first
-2. **Update quantity creation**: Change to Pynta's Quantity syntax
+2. **Update quantity creation**: Change to Unifyt's Quantity syntax
 3. **Test conversions**: Verify unit conversions work as expected
 4. **Use new features**: Take advantage of constants and utilities
 5. **Update tests**: Ensure your test suite passes

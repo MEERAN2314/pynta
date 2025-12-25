@@ -1,7 +1,7 @@
 """Tests for UnitRegistry class."""
 
 import pytest
-from pynta import UnitRegistry
+from unifyt import UnitRegistry
 
 
 class TestUnitRegistry:

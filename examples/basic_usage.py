@@ -1,6 +1,6 @@
-"""Basic usage examples for Pynta library."""
+"""Basic usage examples for Unifyt library."""
 
-from pynta import Quantity
+from unifyt import Quantity
 
 # Create quantities with units
 print("=== Creating Quantities ===")
