@@ -141,12 +141,240 @@ class Unit:
         # Angle
         'radian': 1.0, 'rad': 1.0, 'radians': 1.0,
         'degree': 0.0174533, 'deg': 0.0174533, 'degrees': 0.0174533,
+        'arcminute': 0.000290888, 'arcmin': 0.000290888,
+        'arcsecond': 4.84814e-6, 'arcsec': 4.84814e-6,
+        'gradian': 0.015708, 'grad': 0.015708,
         
         # Dimensionless
         'dimensionless': 1.0,
         'percent': 0.01, '%': 0.01,
         'ppm': 1e-6,
         'ppb': 1e-9,
+        'ppt': 1e-12,
+        
+        # Advanced Length (Astronomical & Microscopic)
+        'astronomical_unit': 1.495978707e11, 'au': 1.495978707e11,
+        'light_year': 9.4607304725808e15, 'ly': 9.4607304725808e15,
+        'parsec': 3.0856775814913673e16, 'pc': 3.0856775814913673e16,
+        'kiloparsec': 3.0856775814913673e19, 'kpc': 3.0856775814913673e19,
+        'megaparsec': 3.0856775814913673e22, 'Mpc': 3.0856775814913673e22,
+        'picometer': 1e-12, 'pm': 1e-12,
+        'femtometer': 1e-15, 'fm': 1e-15,
+        'fermi': 1e-15,
+        'nautical_mile': 1852.0, 'nmi': 1852.0,
+        'fathom': 1.8288,
+        'chain': 20.1168,
+        'furlong': 201.168,
+        'league': 4828.03,
+        
+        # Advanced Mass (Atomic & Large Scale)
+        'atomic_mass_unit': 1.66053906660e-27, 'amu': 1.66053906660e-27, 'u': 1.66053906660e-27,
+        'dalton': 1.66053906660e-27, 'Da': 1.66053906660e-27,
+        'electron_mass': 9.1093837015e-31, 'm_e': 9.1093837015e-31,
+        'proton_mass': 1.67262192369e-27, 'm_p': 1.67262192369e-27,
+        'neutron_mass': 1.67492749804e-27, 'm_n': 1.67492749804e-27,
+        'solar_mass': 1.98847e30, 'M_sun': 1.98847e30,
+        'earth_mass': 5.97217e24, 'M_earth': 5.97217e24,
+        'carat': 0.0002, 'ct': 0.0002,
+        'grain': 6.479891e-5, 'gr': 6.479891e-5,
+        'stone': 6.35029, 'st': 6.35029,
+        'slug': 14.5939,
+        
+        # Advanced Time
+        'picosecond': 1e-12, 'ps': 1e-12,
+        'femtosecond': 1e-15, 'fs': 1e-15,
+        'attosecond': 1e-18, 'as': 1e-18,
+        'shake': 1e-8,
+        'fortnight': 1209600.0,
+        'month': 2629800.0,  # Average month (365.25/12 days)
+        'decade': 315576000.0,
+        'century': 3155760000.0,
+        'millennium': 31557600000.0,
+        
+        # Advanced Energy
+        'megajoule': 1e6, 'MJ': 1e6,
+        'gigajoule': 1e9, 'GJ': 1e9,
+        'erg': 1e-7,
+        'british_thermal_unit': 1055.06, 'BTU': 1055.06, 'btu': 1055.06,
+        'therm': 1.05506e8,
+        'quad': 1.05506e18,
+        'ton_tnt': 4.184e9,
+        'kiloton_tnt': 4.184e12,
+        'megaton_tnt': 4.184e15,
+        'rydberg': 2.1798723611035e-18, 'Ry': 2.1798723611035e-18,
+        'hartree': 4.3597447222071e-18, 'Ha': 4.3597447222071e-18,
+        
+        # Advanced Power
+        'gigawatt': 1e9, 'GW': 1e9,
+        'terawatt': 1e12, 'TW': 1e12,
+        'milliwatt': 0.001, 'mW': 0.001,
+        'microwatt': 1e-6, 'uW': 1e-6,
+        'nanowatt': 1e-9, 'nW': 1e-9,
+        'metric_horsepower': 735.5, 'PS': 735.5,
+        'boiler_horsepower': 9809.5,
+        
+        # Advanced Pressure
+        'gigapascal': 1e9, 'GPa': 1e9,
+        'millibar': 100.0, 'mbar': 100.0,
+        'microbar': 0.1, 'ubar': 0.1,
+        'barye': 0.1,
+        'technical_atmosphere': 98066.5, 'at': 98066.5,
+        'inch_mercury': 3386.39, 'inHg': 3386.39,
+        'millimeter_mercury': 133.322, 'mmHg': 133.322,
+        'pound_per_square_inch': 6894.76, 'psi': 6894.76,
+        
+        # Advanced Force
+        'meganewton': 1e6, 'MN': 1e6,
+        'dyne': 1e-5, 'dyn': 1e-5,
+        'kilogram_force': 9.80665, 'kgf': 9.80665,
+        'gram_force': 0.00980665, 'gf': 0.00980665,
+        'ton_force': 9806.65, 'tf': 9806.65,
+        'poundal': 0.138255,
+        'kip': 4448.22,
+        
+        # Advanced Frequency
+        'terahertz': 1e12, 'THz': 1e12,
+        'millihertz': 0.001, 'mHz': 0.001,
+        'rpm': 1/60.0,  # Revolutions per minute
+        'rps': 1.0,  # Revolutions per second
+        
+        # Advanced Voltage
+        'megavolt': 1e6, 'MV': 1e6,
+        'microvolt': 1e-6, 'uV': 1e-6,
+        'nanovolt': 1e-9, 'nV': 1e-9,
+        'statvolt': 299.792458,
+        
+        # Advanced Current
+        'microampere': 1e-6, 'uA': 1e-6,
+        'nanoampere': 1e-9, 'nA': 1e-9,
+        'picoampere': 1e-12, 'pA': 1e-12,
+        'kiloampere': 1000.0, 'kA': 1000.0,
+        'statampere': 3.33564e-10,
+        
+        # Capacitance
+        'farad': 1.0, 'F': 1.0,
+        'millifarad': 0.001, 'mF': 0.001,
+        'microfarad': 1e-6, 'uF': 1e-6,
+        'nanofarad': 1e-9, 'nF': 1e-9,
+        'picofarad': 1e-12, 'pF': 1e-12,
+        
+        # Inductance
+        'henry': 1.0, 'H': 1.0,
+        'millihenry': 0.001, 'mH': 0.001,
+        'microhenry': 1e-6, 'uH': 1e-6,
+        'nanohenry': 1e-9, 'nH': 1e-9,
+        
+        # Magnetic Field
+        'tesla': 1.0, 'T': 1.0,
+        'millitesla': 0.001, 'mT': 0.001,
+        'microtesla': 1e-6, 'uT': 1e-6,
+        'nanotesla': 1e-9, 'nT': 1e-9,
+        'gauss': 1e-4, 'G': 1e-4,
+        'milligauss': 1e-7, 'mG': 1e-7,
+        
+        # Magnetic Flux
+        'weber': 1.0, 'Wb': 1.0,
+        'milliweber': 0.001, 'mWb': 0.001,
+        'maxwell': 1e-8, 'Mx': 1e-8,
+        
+        # Illuminance
+        'lux': 1.0, 'lx': 1.0,
+        'foot_candle': 10.764, 'fc': 10.764,
+        'phot': 10000.0, 'ph': 10000.0,
+        
+        # Luminous Flux
+        'lumen': 1.0, 'lm': 1.0,
+        
+        # Radioactivity
+        'becquerel': 1.0, 'Bq': 1.0,
+        'kilobecquerel': 1000.0, 'kBq': 1000.0,
+        'megabecquerel': 1e6, 'MBq': 1e6,
+        'gigabecquerel': 1e9, 'GBq': 1e9,
+        'curie': 3.7e10, 'Ci': 3.7e10,
+        'millicurie': 3.7e7, 'mCi': 3.7e7,
+        'microcurie': 3.7e4, 'uCi': 3.7e4,
+        'rutherford': 1e6, 'Rd': 1e6,
+        
+        # Absorbed Dose
+        'gray': 1.0, 'Gy': 1.0,
+        'milligray': 0.001, 'mGy': 0.001,
+        'rad': 0.01,
+        
+        # Equivalent Dose
+        'sievert': 1.0, 'Sv': 1.0,
+        'millisievert': 0.001, 'mSv': 0.001,
+        'microsievert': 1e-6, 'uSv': 1e-6,
+        'rem': 0.01,
+        'millirem': 1e-5, 'mrem': 1e-5,
+        
+        # Catalytic Activity
+        'katal': 1.0, 'kat': 1.0,
+        'unit': 1.66667e-8, 'U': 1.66667e-8,  # Enzyme unit
+        
+        # Data/Information
+        'bit': 1.0, 'b': 1.0,
+        'byte': 8.0, 'B': 8.0,
+        'kilobyte': 8000.0, 'kB': 8000.0,
+        'megabyte': 8e6, 'MB': 8e6,
+        'gigabyte': 8e9, 'GB': 8e9,
+        'terabyte': 8e12, 'TB': 8e12,
+        'petabyte': 8e15, 'PB': 8e15,
+        'kibibyte': 8192.0, 'KiB': 8192.0,
+        'mebibyte': 8388608.0, 'MiB': 8388608.0,
+        'gibibyte': 8589934592.0, 'GiB': 8589934592.0,
+        'tebibyte': 8796093022208.0, 'TiB': 8796093022208.0,
+        
+        # Velocity
+        'knot': 0.514444, 'kt': 0.514444, 'kn': 0.514444,
+        'mach': 343.0,  # At sea level, 15°C
+        
+        # Acceleration
+        'gal': 0.01,  # Galileo
+        'standard_gravity': 9.80665, 'g0': 9.80665,
+        
+        # Viscosity (Dynamic)
+        'pascal_second': 1.0, 'Pa_s': 1.0,
+        'poise': 0.1, 'P': 0.1,
+        'centipoise': 0.001, 'cP': 0.001,
+        
+        # Viscosity (Kinematic)
+        'stokes': 1e-4, 'St': 1e-4,
+        'centistokes': 1e-6, 'cSt': 1e-6,
+        
+        # Thermal Conductivity
+        'watt_per_meter_kelvin': 1.0, 'W_m_K': 1.0,
+        
+        # Heat Capacity
+        'joule_per_kelvin': 1.0, 'J_K': 1.0,
+        
+        # Specific Heat
+        'joule_per_kilogram_kelvin': 1.0, 'J_kg_K': 1.0,
+        
+        # Molar Mass
+        'gram_per_mole': 0.001, 'g_mol': 0.001,
+        'kilogram_per_mole': 1.0, 'kg_mol': 1.0,
+        
+        # Concentration
+        'molar': 1000.0, 'M': 1000.0,  # mol/L
+        'millimolar': 1.0, 'mM': 1.0,
+        'micromolar': 0.001, 'uM': 0.001,
+        'nanomolar': 1e-6, 'nM': 1e-6,
+        
+        # Density
+        'kilogram_per_cubic_meter': 1.0, 'kg_m3': 1.0,
+        'gram_per_cubic_centimeter': 1000.0, 'g_cm3': 1000.0,
+        'gram_per_liter': 1.0, 'g_L': 1.0,
+        
+        # Flow Rate
+        'cubic_meter_per_second': 1.0, 'm3_s': 1.0,
+        'liter_per_second': 0.001, 'L_s': 0.001,
+        'liter_per_minute': 1.66667e-5, 'L_min': 1.66667e-5,
+        'gallon_per_minute': 6.30902e-5, 'gpm': 6.30902e-5,
+        
+        # Fuel Efficiency
+        'mile_per_gallon': 425144.0, 'mpg': 425144.0,  # Inverse meters
+        'kilometer_per_liter': 1000.0, 'km_L': 1000.0,
+        'liter_per_100km': 0.01, 'L_100km': 0.01,
     }
     
     # Map units to their base unit (auto-generated from conversions)

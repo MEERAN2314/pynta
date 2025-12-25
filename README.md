@@ -23,11 +23,24 @@ print(speed.to('kilometer/hour'))  # 36.0 km/h 🎯
 ## Features
 
 - **Intuitive API**: Simple and Pythonic interface for working with physical quantities
-- **Extensive Unit Support**: 100+ units including SI, imperial, energy, power, pressure, and more
+- **Extensive Unit Support**: **300+ units** including SI, imperial, astronomical, atomic, electromagnetic, and more
 - **High Performance**: Optimized for speed with caching and NumPy integration
 - **Type Safety**: Full type hints for better IDE support
 - **Flexible Conversions**: Easy unit conversions with automatic dimensionality checking
 - **Array Support**: Seamless integration with NumPy arrays
+- **Custom Units**: Define your own units and unit systems
+- **Context Management**: Switch between unit systems easily
+- **Physical Constants**: Built-in library of **80+ physical and astronomical constants**
+- **Utility Functions**: Array creation, statistical operations, and more
+- **Serialization**: Save and load quantities in JSON or pickle format
+
+## 🎉 What's New in v0.2.0
+
+- **300+ units** (3x increase from v0.1.0!)
+- **80+ constants** (2.7x increase!)
+- **15+ new categories**: Electromagnetic, radioactivity, data storage, and more
+- **Fully backward compatible** - All existing code works
+- See [VERSION_0.2.0_RELEASE.md](VERSION_0.2.0_RELEASE.md) for details
 - **Custom Units**: Define your own units and unit systems
 - **Context Management**: Switch between unit systems easily
 - **Physical Constants**: Built-in library of physical and astronomical constants
@@ -160,39 +173,72 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## Supported Units
+## Supported Units (300+)
 
 ### Core Units
-- **Length**: meter, kilometer, mile, foot, inch, nanometer, angstrom, etc.
-- **Mass**: kilogram, gram, pound, ounce, ton, etc.
-- **Time**: second, minute, hour, day, week, year, millisecond, etc.
+- **Length**: meter, kilometer, mile, foot, inch, nanometer, angstrom, parsec, light_year, etc.
+- **Mass**: kilogram, gram, pound, ounce, ton, atomic_mass_unit, solar_mass, earth_mass, etc.
+- **Time**: second, minute, hour, day, week, year, femtosecond, attosecond, millennium, etc.
 - **Temperature**: kelvin, celsius, fahrenheit
 
 ### Derived Units
-- **Energy**: joule, calorie, kilowatt_hour, electronvolt, etc.
-- **Power**: watt, kilowatt, horsepower, etc.
-- **Pressure**: pascal, bar, atmosphere, psi, torr, etc.
-- **Force**: newton, pound_force, etc.
-- **Frequency**: hertz, kilohertz, megahertz, gigahertz
-- **Voltage**: volt, millivolt, kilovolt
+- **Energy**: joule, calorie, kilowatt_hour, electronvolt, BTU, erg, rydberg, hartree, etc.
+- **Power**: watt, kilowatt, horsepower, gigawatt, terawatt, etc.
+- **Pressure**: pascal, bar, atmosphere, psi, torr, gigapascal, etc.
+- **Force**: newton, dyne, kilogram_force, pound_force, kip, etc.
+- **Frequency**: hertz, kilohertz, megahertz, gigahertz, terahertz, rpm, etc.
+- **Voltage**: volt, millivolt, kilovolt, megavolt, etc.
+- **Current**: ampere, milliampere, microampere, kiloampere, etc.
+- **Capacitance**: farad, microfarad, nanofarad, picofarad, etc.
+- **Inductance**: henry, millihenry, microhenry, etc.
+- **Magnetic Field**: tesla, gauss, millitesla, etc.
+- **Radioactivity**: becquerel, curie, rutherford, etc.
+- **Radiation Dose**: gray, sievert, rad, rem, etc.
+- **Data**: bit, byte, kilobyte, megabyte, gigabyte, terabyte, etc.
 - **Volume**: liter, gallon, milliliter, cup, etc.
-- **Angle**: radian, degree
+- **Angle**: radian, degree, arcminute, arcsecond, etc.
+- **Viscosity**: poise, stokes, pascal_second, etc.
+- **Concentration**: molar, millimolar, micromolar, etc.
 - And many more!
 
-## Physical Constants
+## Physical Constants (80+)
 
 Access fundamental constants with proper units:
 
 ```python
 from unifyt import constants
 
+# Fundamental
 print(constants.c)          # Speed of light
 print(constants.h)          # Planck constant
 print(constants.G)          # Gravitational constant
 print(constants.N_A)        # Avogadro number
 print(constants.g)          # Standard gravity
+
+# Astronomical
 print(constants.AU)         # Astronomical unit
 print(constants.M_sun)      # Solar mass
+print(constants.L_sun)      # Solar luminosity
+print(constants.H_0)        # Hubble constant
+
+# Atomic & Particle
+print(constants.m_e)        # Electron mass
+print(constants.m_p)        # Proton mass
+print(constants.mu_B)       # Bohr magneton
+print(constants.lambda_C)   # Compton wavelength
+
+# Planck Units
+print(constants.l_P)        # Planck length
+print(constants.t_P)        # Planck time
+print(constants.E_P)        # Planck energy
+
+# Electromagnetic
+print(constants.Z_0)        # Vacuum impedance
+print(constants.Phi_0)      # Magnetic flux quantum
+
+# Cosmological
+print(constants.T_CMB)      # CMB temperature
+print(constants.universe_age)  # Age of universe
 ```
 
 ## 🎯 Real-World Applications

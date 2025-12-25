@@ -4,6 +4,7 @@ Welcome to Unifyt! This index will help you find exactly what you need.
 
 ## 🚀 Quick Links
 
+- **🎉 NEW v0.2.0!** Read [VERSION_0.2.0_RELEASE.md](VERSION_0.2.0_RELEASE.md) - **Major update!**
 - **New User?** Start with [COMPLETE_GUIDE.md](COMPLETE_GUIDE.md) - **The ultimate guide!**
 - **Why Unifyt?** Read [WHY_UNIFYT.md](WHY_UNIFYT.md) - **See the value!**
 - **5-Minute Intro?** Read [QUICKSTART.md](QUICKSTART.md)
