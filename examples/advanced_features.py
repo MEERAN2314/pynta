@@ -1,8 +1,8 @@
 """Advanced features demonstration for Unifyt."""
 
 import numpy as np
-from unifyt import Quantity, constants, utils
-from unifyt.serialization import save_quantity, load_quantity, quantity_to_json
+from ..unifyt import Quantity, constants, utils
+from ..unifyt.serialization import save_quantity, load_quantity, quantity_to_json
 
 print("=== Physical Constants ===")
 print(f"Speed of light: {constants.c}")
