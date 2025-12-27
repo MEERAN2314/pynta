@@ -23,4 +23,10 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-addopts = "-v --cov=unifyt --cov-report=html --cov-report=term"
+addopts = "-v --tb=short --strict-markers -p no:langsmith"
+# Uncomment for coverage:
+# addopts = "-v --cov=unifyt --cov-report=html --cov-report=term -p no:langsmith"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+]
