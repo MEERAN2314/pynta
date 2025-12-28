@@ -25,6 +25,8 @@ class Unit:
         'mole': Dimension(amount=1),
         'candela': Dimension(luminosity=1),
         'dimensionless': Dimension(),
+        # Derived units with their dimensions
+        'joule': Dimension(mass=1, length=2, time=-2),  # kg⋅m²/s²
     }
     
     # Conversion factors to base units
@@ -451,6 +453,18 @@ class Unit:
         mapping['%'] = 'dimensionless'
         mapping['ppm'] = 'dimensionless'
         mapping['ppb'] = 'dimensionless'
+        
+        # Energy units (joule = kg⋅m²/s²)
+        # These are derived units that need special handling
+        # We'll mark them as 'joule' base and handle conversion via _CONVERSIONS
+        energy_units = ['joule', 'J', 'joules', 'kilojoule', 'kJ', 'megajoule', 'MJ', 
+                       'gigajoule', 'GJ', 'calorie', 'cal', 'calories', 'kilocalorie', 
+                       'kcal', 'Calorie', 'electronvolt', 'eV', 'watt_hour', 'Wh', 
+                       'kilowatt_hour', 'kWh', 'erg', 'british_thermal_unit', 'BTU', 
+                       'btu', 'quad', 'ton_tnt', 'kiloton_tnt', 'megaton_tnt', 
+                       'rydberg', 'Ry', 'hartree', 'Ha']
+        for u in energy_units:
+            mapping[u] = 'joule'
         
         cls._UNIT_TO_BASE = mapping
         return mapping
