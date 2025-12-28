@@ -11,7 +11,7 @@ kinetic_energy = 0.5 * mass * velocity ** 2
 print(f"Mass: {mass}")
 print(f"Velocity: {velocity}")
 print(f"Kinetic Energy: {kinetic_energy}")
-
+ 
 print("\n=== Physics: Gravitational Potential Energy ===")
 # E = m * g * h
 mass = Quantity(50, 'kilogram')
