@@ -1,7 +1,7 @@
 """Basic usage examples for Unifyt library."""
 
 from unifyt import Quantity
-
+ 
 # Create quantities with units
 print("=== Creating Quantities ===")
 distance = Quantity(100, 'meter')
