@@ -2,7 +2,7 @@
 
 from unifyt.quantity import Quantity
 import math
-
+ 
 # Mathematical constants
 pi = math.pi
 e = math.e
