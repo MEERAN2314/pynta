@@ -6,7 +6,7 @@ from unifyt import Quantity, UnitRegistry
 registry = UnitRegistry()
 
 print("=== Defining Custom Units ===")
-
+ 
 # Define some unusual units
 registry.define('furlong', '220 yard')
 registry.define('fortnight', '14 day')
