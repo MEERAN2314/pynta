@@ -13,6 +13,22 @@ from unifyt.context import UnitContext
 from unifyt import constants
 from unifyt import utils
 
+# New in v0.3.0
+from unifyt.uncertainty import UncertainQuantity
+from unifyt.formatter import QuantityFormatter, format_quantity
+from unifyt.validator import UnitValidator, validate_unit, suggest_unit
+from unifyt.batch import BatchConverter, convert_batch, sum_batch
+from unifyt.profiler import (
+    PerformanceProfiler,
+    get_profiler,
+    enable_profiling,
+    disable_profiling,
+    print_profiling_stats,
+    reset_profiling,
+    profile_function
+)
+from unifyt import prefixes
+
 # Import serialization if available
 try:
     from unifyt.serialization import (
@@ -77,7 +93,7 @@ from unifyt.exceptions import (
     create_exception,
 )
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 # Build __all__ dynamically based on what's available
 __all__ = [
@@ -88,9 +104,28 @@ __all__ = [
     "Dimension",
     "UnitContext",
     
+    # New in v0.3.0
+    "UncertainQuantity",
+    "QuantityFormatter",
+    "format_quantity",
+    "UnitValidator",
+    "validate_unit",
+    "suggest_unit",
+    "BatchConverter",
+    "convert_batch",
+    "sum_batch",
+    "PerformanceProfiler",
+    "get_profiler",
+    "enable_profiling",
+    "disable_profiling",
+    "print_profiling_stats",
+    "reset_profiling",
+    "profile_function",
+    
     # Modules
     "constants",
     "utils",
+    "prefixes",
     
     # Exceptions - Base
     "UnifytException",

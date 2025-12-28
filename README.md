@@ -1,10 +1,10 @@
-# Unifyt v0.2.0
+# Unifyt v0.3.0
 
 A powerful and easy-to-use Python library for unit conversion and calculations, combining the best features of Pint and Unyt.
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://github.com/MEERAN2314/unifyt)
+[![Version](https://img.shields.io/badge/version-0.3.0-green.svg)](https://github.com/MEERAN2314/unifyt)
 
 ## 🌟 Why Unifyt?
 
@@ -38,20 +38,27 @@ print(speed.to('kilometer/hour'))  # 36.0 km/h 🎯
 - **Utility Functions**: Array creation, statistical operations, and more
 - **Serialization**: Save and load quantities in JSON or pickle format
 
-## 🎉 What's New in v0.2.0
+## 🎉 What's New in v0.3.0
+
+### Major New Features 🚀
+
+- **🔬 Uncertain Quantities**: Full support for measurements with error margins and automatic uncertainty propagation
+- **🎨 Advanced Formatting**: Multiple output styles (LaTeX, Unicode, HTML, scientific notation)
+- **✅ Unit Validation**: Validate units before use, get suggestions for typos, check dimensionality
+- **⚡ Batch Operations**: Process multiple quantities efficiently with batch converters
+- **📊 Performance Profiling**: Built-in profiling to monitor and optimize your code
+- **🔧 Metric Prefixes**: Auto-generate prefixed units (kilo-, mega-, micro-, etc.)
+- **🧮 Unit Simplification**: Automatically simplify complex unit expressions
+- **📦 Enhanced Registry**: Save and load custom unit definitions
+
+### Previous Features (v0.2.0)
 
 - **300+ units** (3x increase from v0.1.0!)
 - **80+ constants** (2.7x increase!)
 - **25+ exception types** for precise error handling
 - **15+ new categories**: Electromagnetic, radioactivity, data storage, viscosity, and more
-- **Comprehensive documentation**: 10+ new guides including WHY_UNIFYT.md, EXCEPTIONS_GUIDE.md
+- **Comprehensive documentation**: 10+ new guides
 - **Fully backward compatible** - All existing code works
-- See [CHANGELOG.md](CHANGELOG.md) for complete details
-- **Custom Units**: Define your own units and unit systems
-- **Context Management**: Switch between unit systems easily
-- **Physical Constants**: Built-in library of physical and astronomical constants
-- **Utility Functions**: Array creation, statistical operations, and more
-- **Serialization**: Save and load quantities in JSON or pickle format
 
 ## Installation
 
@@ -73,7 +80,7 @@ pip install unifyt
 ```
 
 ```python
-from unifyt import Quantity, constants, utils
+from unifyt import Quantity, UncertainQuantity, format_quantity, constants, utils
 import numpy as np
 
 # Create quantities with units
@@ -87,6 +94,15 @@ print(speed)  # 10.438413361169102 meter / second
 # Convert units
 speed_mph = speed.to('miles/hour')
 print(speed_mph)  # 23.350065963060686 mile / hour
+
+# NEW in v0.3.0: Measurements with uncertainty
+measurement = UncertainQuantity(100.0, 'meter', uncertainty=0.5)
+result = measurement * 2
+print(result)  # 200.0 ± 1.0 meter
+
+# NEW in v0.3.0: Advanced formatting
+print(format_quantity(speed, style='latex'))  # LaTeX output
+print(format_quantity(speed, style='unicode'))  # Unicode with superscripts
 
 # Work with arrays
 distances = Quantity(np.array([100, 200, 300]), 'meters')
