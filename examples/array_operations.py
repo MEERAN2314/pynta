@@ -2,7 +2,7 @@
 
 import numpy as np
 from unifyt import Quantity
-
+ 
 print("=== Creating Array Quantities ===")
 # Temperature measurements
 temperatures = Quantity(np.array([20, 22, 25, 23, 21]), 'celsius')
