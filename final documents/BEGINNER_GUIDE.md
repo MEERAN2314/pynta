@@ -50,9 +50,8 @@ distance = Quantity(100, 'meter')  # Crystal clear! ✨
 
 **Without Unifyt:**
 ```python
-# What units are these?
-speed = 60  # mph? km/h? m/s? 😕
-time = 2    # hours? minutes? seconds? 🤷
+speed = Quantity(60, 'mile/hour')  # Clear! 😊
+time = Quantity(2, 'hour')          # Obvious! 👍
 ```
 
 **With Unifyt:**
