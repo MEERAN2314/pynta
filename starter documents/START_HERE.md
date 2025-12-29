@@ -85,7 +85,7 @@ You now know the basics of Unifyt!
 → Browse [examples/](examples/) - Real-world code
 
 **Want API details?**
-→ Check [docs/api_reference.md](docs/api_reference.md) - Complete reference
+→ Check [docs/api_reference.md](docs/api_reference.md) - Complete reference module
 
 ### Try Examples
 
