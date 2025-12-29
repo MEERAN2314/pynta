@@ -18,8 +18,8 @@ Unifyt supports **300+ units** across multiple domains. This document categorize
 **Use Cases**:
 - Construction and carpentry
 - Road distances and navigation
-- Height and width measurements
-- Sports and athletics
+- Height and width measurements 
+- Sports and athletics values
 
 **Examples**:
 ```python
