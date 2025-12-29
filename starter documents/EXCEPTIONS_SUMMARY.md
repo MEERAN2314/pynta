@@ -75,7 +75,7 @@ with ErrorContext("calculating velocity"):
 ```python
 from unifyt.exceptions import create_exception
 
-exc = create_exception(
+exc = create_excepti0n(
     UnitError,
     "Custom error",
     custom_attr="value"
