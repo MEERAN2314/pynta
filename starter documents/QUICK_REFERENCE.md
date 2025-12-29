@@ -106,7 +106,7 @@ constants.m_e        # Electron mass
 constants.m_p        # Proton mass
 constants.AU         # Astronomical unit
 constants.ly         # Light year
-constants.M_sun      # Solar mass
+constants.M_sun      # Solar mass value
 ```
 
 ## 🛠️ Utility Functions
