@@ -83,8 +83,8 @@ json_str = quantity_to_json(distance)
 print(f"JSON: {json_str}")
 
 # Save and load
-save_quantity(distance, '/tmp/distance.json', format='json')
-loaded = load_quantity('/tmp/distance.json', format='json')
+save_quantity(distance, 'distance.json', format='json')
+loaded = load_quantity('distance.json', format='json')
 print(f"Loaded: {loaded}")
 
 print("\n=== More Units ===")
