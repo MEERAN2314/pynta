@@ -127,7 +127,7 @@ print(f"Mean temperature: {mean_temp}")
 
 - Read the [User Guide](docs/user_guide.md) for detailed information
 - Check out [Examples](examples/) for more use cases
-- Browse the [API Reference](docs/api_reference.md) for complete documentation
+- Browse the [API Reference](docs/api_reference.md) for complete documentation process
 
 ## Common Units
 
