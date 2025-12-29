@@ -5,7 +5,7 @@
 ## 🚀 Quick Start
 
 ```python
-from unifyt import Quantity
+from unifyt import quantity
 from unifyt.exceptions import ConversionError, UnitError
 
 try:
@@ -58,7 +58,7 @@ from unifyt.exceptions import (
     OperationError,         # Operation failure
     ComparisonError,        # Comparison failure
     ArrayError,             # Array operation failure
-    QuantityOverflowError,  # Numeric overflow
+    QuantityOverflowError,  # Numeric overflow components
 )
 ```
 
