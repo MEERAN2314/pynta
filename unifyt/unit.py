@@ -85,6 +85,10 @@ class Unit:
         'calorie': 4.184, 'cal': 4.184, 'calories': 4.184,
         'kilocalorie': 4184.0, 'kcal': 4184.0, 'Calorie': 4184.0,
         'electronvolt': 1.602176634e-19, 'eV': 1.602176634e-19,
+        'kiloelectronvolt': 1.602176634e-16, 'keV': 1.602176634e-16,
+        'megaelectronvolt': 1.602176634e-13, 'MeV': 1.602176634e-13,
+        'gigaelectronvolt': 1.602176634e-10, 'GeV': 1.602176634e-10,
+        'teraelectronvolt': 1.602176634e-7, 'TeV': 1.602176634e-7,
         'watt_hour': 3600.0, 'Wh': 3600.0,
         'kilowatt_hour': 3.6e6, 'kWh': 3.6e6,
         
@@ -407,7 +411,12 @@ class Unit:
                        'centimeter', 'cm', 'centimeters', 'millimeter', 'mm', 'millimeters',
                        'micrometer', 'um', 'micrometers', 'nanometer', 'nm', 'nanometers',
                        'angstrom', 'Å', 'mile', 'mi', 'miles', 'yard', 'yd', 'yards',
-                       'foot', 'ft', 'feet', 'inch', 'in', 'inches']
+                       'foot', 'ft', 'feet', 'inch', 'in', 'inches',
+                       # Astronomical units
+                       'astronomical_unit', 'au', 'light_year', 'ly', 'parsec', 'pc',
+                       'kiloparsec', 'kpc', 'megaparsec', 'Mpc', 'picometer', 'pm',
+                       'femtometer', 'fm', 'fermi', 'nautical_mile', 'nmi', 'fathom',
+                       'chain', 'furlong', 'league']
         for u in length_units:
             mapping[u] = 'meter'
         
@@ -415,7 +424,11 @@ class Unit:
         mass_units = ['kilogram', 'kg', 'kilograms', 'gram', 'g', 'grams',
                      'milligram', 'mg', 'milligrams', 'microgram', 'ug', 'micrograms',
                      'pound', 'lb', 'pounds', 'ounce', 'oz', 'ounces',
-                     'ton', 'tons', 'tonne', 'tonnes']
+                     'ton', 'tons', 'tonne', 'tonnes',
+                     # Advanced mass units
+                     'atomic_mass_unit', 'amu', 'u', 'dalton', 'Da', 'electron_mass', 'm_e',
+                     'proton_mass', 'm_p', 'neutron_mass', 'm_n', 'solar_mass', 'M_sun',
+                     'earth_mass', 'M_earth', 'carat', 'ct', 'grain', 'gr', 'stone', 'st', 'slug']
         for u in mass_units:
             mapping[u] = 'kilogram'
         
@@ -423,7 +436,10 @@ class Unit:
         time_units = ['second', 's', 'seconds', 'sec', 'millisecond', 'ms', 'milliseconds',
                      'microsecond', 'us', 'microseconds', 'nanosecond', 'ns', 'nanoseconds',
                      'minute', 'min', 'minutes', 'hour', 'h', 'hr', 'hours',
-                     'day', 'd', 'days', 'week', 'weeks', 'year', 'yr', 'years']
+                     'day', 'd', 'days', 'week', 'weeks', 'year', 'yr', 'years',
+                     # Advanced time units
+                     'picosecond', 'ps', 'femtosecond', 'fs', 'attosecond', 'as', 'shake',
+                     'fortnight', 'month', 'decade', 'century', 'millennium']
         for u in time_units:
             mapping[u] = 'second'
         
@@ -459,7 +475,9 @@ class Unit:
         # We'll mark them as 'joule' base and handle conversion via _CONVERSIONS
         energy_units = ['joule', 'J', 'joules', 'kilojoule', 'kJ', 'megajoule', 'MJ', 
                        'gigajoule', 'GJ', 'calorie', 'cal', 'calories', 'kilocalorie', 
-                       'kcal', 'Calorie', 'electronvolt', 'eV', 'watt_hour', 'Wh', 
+                       'kcal', 'Calorie', 'electronvolt', 'eV', 'kiloelectronvolt', 'keV',
+                       'megaelectronvolt', 'MeV', 'gigaelectronvolt', 'GeV', 
+                       'teraelectronvolt', 'TeV', 'watt_hour', 'Wh', 
                        'kilowatt_hour', 'kWh', 'erg', 'british_thermal_unit', 'BTU', 
                        'btu', 'quad', 'ton_tnt', 'kiloton_tnt', 'megaton_tnt', 
                        'rydberg', 'Ry', 'hartree', 'Ha']
@@ -547,7 +565,11 @@ class Unit:
         if not self.is_compatible_with(other):
             raise ValueError(f"Incompatible units: {self} and {other}")
         
-        # Calculate conversion factor
+        # Handle temperature conversions with offsets
+        if self._is_temperature_unit() and other._is_temperature_unit():
+            return self._temperature_conversion_factor(other)
+        
+        # Calculate conversion factor for regular units
         self_factor = 1.0
         for unit, power in self._components.items():
             self_factor *= self._CONVERSIONS.get(unit, 1.0) ** power
@@ -557,6 +579,22 @@ class Unit:
             other_factor *= other._CONVERSIONS.get(unit, 1.0) ** power
         
         return self_factor / other_factor * self._scale / other._scale
+    
+    def _is_temperature_unit(self) -> bool:
+        """Check if this is a temperature unit."""
+        temp_units = {'kelvin', 'K', 'celsius', 'C', 'degC', 'fahrenheit', 'F', 'degF'}
+        return len(self._components) == 1 and list(self._components.keys())[0] in temp_units
+    
+    def _temperature_conversion_factor(self, other: Unit) -> float:
+        """Handle temperature conversions with proper offset handling."""
+        from_unit = list(self._components.keys())[0]
+        to_unit = list(other._components.keys())[0]
+        
+        # For now, return scale factor only (offset handled in Quantity.to())
+        from_scale = self._CONVERSIONS.get(from_unit, 1.0)
+        to_scale = other._CONVERSIONS.get(to_unit, 1.0)
+        
+        return from_scale / to_scale
     
     def to_base_units(self) -> Unit:
         """Convert to base SI units."""
@@ -657,9 +695,12 @@ class Unit:
         """Raise unit to a power."""
         new_components = {unit: power * exponent for unit, power in self._components.items()}
         
+        # Clean up components with zero power
+        new_components = {unit: power for unit, power in new_components.items() if abs(power) > 1e-10}
+        
         parts = []
         for unit, power in new_components.items():
-            if power == 1:
+            if abs(power - 1.0) < 1e-10:
                 parts.append(unit)
             else:
                 parts.append(f"{unit}^{power}")

@@ -70,9 +70,37 @@ class Quantity:
                 f"incompatible dimensions"
             )
         
+        # Handle temperature conversions with offsets
+        if self._unit._is_temperature_unit() and target._is_temperature_unit():
+            return self._convert_temperature(target)
+        
+        # Regular unit conversion
         conversion_factor = self._unit.conversion_factor_to(target)
         new_value = self._value * conversion_factor
         return Quantity(new_value, target)
+    
+    def _convert_temperature(self, target_unit: Unit) -> 'Quantity':
+        """Convert temperature with proper offset handling."""
+        from_unit = list(self._unit._components.keys())[0]
+        to_unit = list(target_unit._components.keys())[0]
+        
+        # Convert to Kelvin first, then to target
+        if from_unit in ['celsius', 'C', 'degC']:
+            kelvin_value = self._value + 273.15
+        elif from_unit in ['fahrenheit', 'F', 'degF']:
+            kelvin_value = (self._value + 459.67) * 5.0/9.0
+        else:  # Already Kelvin
+            kelvin_value = self._value
+        
+        # Convert from Kelvin to target
+        if to_unit in ['celsius', 'C', 'degC']:
+            target_value = kelvin_value - 273.15
+        elif to_unit in ['fahrenheit', 'F', 'degF']:
+            target_value = kelvin_value * 9.0/5.0 - 459.67
+        else:  # Target is Kelvin
+            target_value = kelvin_value
+        
+        return Quantity(target_value, target_unit)
     
     def to_base_units(self) -> Quantity:
         """Convert to base SI units."""
@@ -125,6 +153,10 @@ class Quantity:
         new_value = self._value ** exponent
         new_unit = self._unit ** exponent
         return Quantity(new_value, new_unit)
+    
+    def sqrt(self) -> 'Quantity':
+        """Square root of quantity."""
+        return self ** 0.5
     
     def __radd__(self, other: Union[float, int]) -> Quantity:
         """Right addition."""
@@ -195,3 +227,28 @@ class Quantity:
         if format_spec:
             return f"{self._value.__format__(format_spec)} {self._unit}"
         return str(self)
+    
+    def __getitem__(self, key) -> 'Quantity':
+        """Get item from quantity array."""
+        return Quantity(self._value[key], self._unit)
+    
+    def __setitem__(self, key, value: Union['Quantity', float, int]) -> None:
+        """Set item in quantity array."""
+        if isinstance(value, Quantity):
+            if not self._unit.is_compatible_with(value._unit):
+                raise ValueError(f"Cannot assign {value._unit} to {self._unit}")
+            value_converted = value.to(self._unit)
+            self._value[key] = value_converted._value
+        elif self._unit.is_dimensionless():
+            self._value[key] = value
+        else:
+            raise ValueError("Cannot assign scalar to dimensioned quantity")
+    
+    def __len__(self) -> int:
+        """Length of quantity array."""
+        return len(self._value)
+    
+    def __iter__(self):
+        """Iterate over quantity array."""
+        for i in range(len(self._value)):
+            yield Quantity(self._value[i], self._unit)

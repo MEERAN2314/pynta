@@ -300,3 +300,74 @@ def isclose(q1: Quantity, q2: Quantity, rtol: float = 1e-5, atol: float = 1e-8) 
         return False
     q2_converted = q2.to(q1.unit)
     return np.allclose(q1.value, q2_converted.value, rtol=rtol, atol=atol)
+
+
+def allclose(q1: Quantity, q2: Quantity, rtol: float = 1e-5, atol: float = 1e-8) -> bool:
+    """
+    Alias for isclose - check if two quantities are close in value.
+    
+    Args:
+        q1: First quantity
+        q2: Second quantity
+        rtol: Relative tolerance
+        atol: Absolute tolerance
+        
+    Returns:
+        True if quantities are close
+    """
+    return isclose(q1, q2, rtol, atol)
+
+
+def logspace(start: Quantity, stop: Quantity, num: int = 50, base: float = 10.0) -> Quantity:
+    """
+    Create quantities with logarithmically spaced values.
+    
+    Args:
+        start: Starting quantity
+        stop: Ending quantity (will be converted to start's units)
+        num: Number of samples
+        base: Base of the logarithm
+        
+    Returns:
+        Quantity with array of logarithmically spaced values
+        
+    Examples:
+        >>> distances = logspace(Quantity(1, 'meter'), Quantity(1000, 'meter'), 5)
+    """
+    stop_converted = stop.to(start.unit)
+    
+    # Calculate log values
+    start_log = np.log(start.magnitude) / np.log(base)
+    stop_log = np.log(stop_converted.magnitude) / np.log(base)
+    
+    # Create logspace
+    log_values = np.linspace(start_log, stop_log, num)
+    values = base ** log_values
+    
+    return Quantity(values, start.unit)
+
+
+def where(condition: np.ndarray, x: Quantity, y: Quantity) -> Quantity:
+    """
+    Return elements chosen from x or y depending on condition.
+    
+    Args:
+        condition: Boolean array condition
+        x: Quantity to choose from where condition is True
+        y: Quantity to choose from where condition is False
+        
+    Returns:
+        Quantity with selected values
+        
+    Examples:
+        >>> temps = Quantity(np.array([10, 25, 35]), 'celsius')
+        >>> condition = temps.value > 20
+        >>> result = where(condition, temps, Quantity(20, 'celsius'))
+    """
+    # Convert y to x's units if needed
+    if not x.unit.is_compatible_with(y.unit):
+        raise ValueError(f"Incompatible units: {x.unit} and {y.unit}")
+    
+    y_converted = y.to(x.unit)
+    result_values = np.where(condition, x.value, y_converted.value)
+    return Quantity(result_values, x.unit)
