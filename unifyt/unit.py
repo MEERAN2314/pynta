@@ -27,6 +27,26 @@ class Unit:
          'dimensionless': Dimension(),
         # Derived units with their dimensions
         'joule': Dimension(mass=1, length=2, time=-2),  # kg⋅m²/s²
+        'watt': Dimension(mass=1, length=2, time=-3),  # kg⋅m²/s³
+        'pascal': Dimension(mass=1, length=-1, time=-2),  # kg/(m⋅s²)
+        'newton': Dimension(mass=1, length=1, time=-2),  # kg⋅m/s²
+        'hertz': Dimension(time=-1),  # 1/s
+        'volt': Dimension(mass=1, length=2, time=-3, current=-1),  # kg⋅m²/(A⋅s³)
+        'coulomb': Dimension(current=1, time=1),  # A⋅s
+        'ohm': Dimension(mass=1, length=2, time=-3, current=-2),  # kg⋅m²/(A²⋅s³)
+        'farad': Dimension(mass=-1, length=-2, time=4, current=2),  # A²⋅s⁴/(kg⋅m²)
+        'henry': Dimension(mass=1, length=2, time=-2, current=-2),  # kg⋅m²/(A²⋅s²)
+        'tesla': Dimension(mass=1, time=-2, current=-1),  # kg/(A⋅s²)
+        'weber': Dimension(mass=1, length=2, time=-2, current=-1),  # kg⋅m²/(A⋅s²)
+        'becquerel': Dimension(time=-1),  # 1/s
+        'gray': Dimension(length=2, time=-2),  # m²/s²
+        'sievert': Dimension(length=2, time=-2),  # m²/s²
+        'cubic_meter': Dimension(length=3),  # m³
+        'liter': Dimension(length=3),  # m³
+        'radian': Dimension(),  # dimensionless
+        'bit': Dimension(),  # dimensionless (information)
+        'knot': Dimension(length=1, time=-1),  # m/s
+        'mach': Dimension(length=1, time=-1),  # m/s
     }
     
     # Conversion factors to base units
@@ -82,6 +102,9 @@ class Unit:
         # Energy
         'joule': 1.0, 'J': 1.0, 'joules': 1.0,
         'kilojoule': 1000.0, 'kJ': 1000.0,
+        'megajoule': 1e6, 'MJ': 1e6,
+        'gigajoule': 1e9, 'GJ': 1e9,
+        'terajoule': 1e12, 'TJ': 1e12,
         'calorie': 4.184, 'cal': 4.184, 'calories': 4.184,
         'kilocalorie': 4184.0, 'kcal': 4184.0, 'Calorie': 4184.0,
         'electronvolt': 1.602176634e-19, 'eV': 1.602176634e-19,
@@ -132,6 +155,7 @@ class Unit:
         'megaohm': 1e6, 'MΩ': 1e6,
         
         # Volume
+        'cubic_meter': 1.0, 'm3': 1.0, 'm^3': 1.0,
         'liter': 0.001, 'L': 0.001, 'liters': 0.001, 'litre': 0.001, 'litres': 0.001,
         'milliliter': 1e-6, 'mL': 1e-6, 'milliliters': 1e-6,
         'gallon': 0.00378541, 'gal': 0.00378541, 'gallons': 0.00378541,
@@ -449,7 +473,9 @@ class Unit:
             mapping[u] = 'kelvin'
         
         # Current units
-        current_units = ['ampere', 'A', 'amperes', 'amp', 'amps', 'milliampere', 'mA']
+        current_units = ['ampere', 'A', 'amperes', 'amp', 'amps', 'milliampere', 'mA',
+                        'microampere', 'uA', 'nanoampere', 'nA', 'picoampere', 'pA',
+                        'kiloampere', 'kA', 'statampere']
         for u in current_units:
             mapping[u] = 'ampere'
         
@@ -469,20 +495,151 @@ class Unit:
         mapping['%'] = 'dimensionless'
         mapping['ppm'] = 'dimensionless'
         mapping['ppb'] = 'dimensionless'
+        mapping['ppt'] = 'dimensionless'
         
         # Energy units (joule = kg⋅m²/s²)
         # These are derived units that need special handling
         # We'll mark them as 'joule' base and handle conversion via _CONVERSIONS
         energy_units = ['joule', 'J', 'joules', 'kilojoule', 'kJ', 'megajoule', 'MJ', 
-                       'gigajoule', 'GJ', 'calorie', 'cal', 'calories', 'kilocalorie', 
+                       'gigajoule', 'GJ', 'terajoule', 'TJ', 'calorie', 'cal', 'calories', 'kilocalorie', 
                        'kcal', 'Calorie', 'electronvolt', 'eV', 'kiloelectronvolt', 'keV',
                        'megaelectronvolt', 'MeV', 'gigaelectronvolt', 'GeV', 
                        'teraelectronvolt', 'TeV', 'watt_hour', 'Wh', 
                        'kilowatt_hour', 'kWh', 'erg', 'british_thermal_unit', 'BTU', 
-                       'btu', 'quad', 'ton_tnt', 'kiloton_tnt', 'megaton_tnt', 
+                       'btu', 'therm', 'quad', 'ton_tnt', 'kiloton_tnt', 'megaton_tnt', 
                        'rydberg', 'Ry', 'hartree', 'Ha']
         for u in energy_units:
             mapping[u] = 'joule'
+        
+        # Power units (watt = J/s)
+        power_units = ['watt', 'W', 'watts', 'kilowatt', 'kW', 'kilowatts', 
+                      'megawatt', 'MW', 'megawatts', 'gigawatt', 'GW', 'terawatt', 'TW',
+                      'milliwatt', 'mW', 'microwatt', 'uW', 'nanowatt', 'nW',
+                      'horsepower', 'hp', 'metric_horsepower', 'PS', 'boiler_horsepower']
+        for u in power_units:
+            mapping[u] = 'watt'
+        
+        # Pressure units (pascal = N/m²)
+        pressure_units = ['pascal', 'Pa', 'kilopascal', 'kPa', 'megapascal', 'MPa',
+                         'gigapascal', 'GPa', 'bar', 'bars', 'millibar', 'mbar',
+                         'microbar', 'ubar', 'barye', 'atmosphere', 'atm',
+                         'technical_atmosphere', 'at', 'psi', 'PSI', 'pound_per_square_inch',
+                         'torr', 'Torr', 'inch_mercury', 'inHg', 'millimeter_mercury', 'mmHg']
+        for u in pressure_units:
+            mapping[u] = 'pascal'
+        
+        # Force units (newton = kg⋅m/s²)
+        force_units = ['newton', 'N', 'newtons', 'kilonewton', 'kN', 'meganewton', 'MN',
+                      'dyne', 'dyn', 'kilogram_force', 'kgf', 'gram_force', 'gf',
+                      'ton_force', 'tf', 'pound_force', 'lbf', 'poundal', 'kip']
+        for u in force_units:
+            mapping[u] = 'newton'
+        
+        # Frequency units (hertz = 1/s)
+        frequency_units = ['hertz', 'Hz', 'kilohertz', 'kHz', 'megahertz', 'MHz',
+                          'gigahertz', 'GHz', 'terahertz', 'THz', 'millihertz', 'mHz',
+                          'rpm', 'rps']
+        for u in frequency_units:
+            mapping[u] = 'hertz'
+        
+        # Voltage units (volt = J/C)
+        voltage_units = ['volt', 'V', 'volts', 'millivolt', 'mV', 'kilovolt', 'kV',
+                        'megavolt', 'MV', 'microvolt', 'uV', 'nanovolt', 'nV', 'statvolt']
+        for u in voltage_units:
+            mapping[u] = 'volt'
+        
+        # Charge units (coulomb)
+        charge_units = ['coulomb', 'C', 'coulombs']
+        for u in charge_units:
+            mapping[u] = 'coulomb'
+        
+        # Resistance units (ohm)
+        resistance_units = ['ohm', 'Ω', 'ohms', 'kiloohm', 'kΩ', 'megaohm', 'MΩ']
+        for u in resistance_units:
+            mapping[u] = 'ohm'
+        
+        # Capacitance units (farad)
+        capacitance_units = ['farad', 'F', 'millifarad', 'mF', 'microfarad', 'uF',
+                            'nanofarad', 'nF', 'picofarad', 'pF']
+        for u in capacitance_units:
+            mapping[u] = 'farad'
+        
+        # Inductance units (henry)
+        inductance_units = ['henry', 'H', 'millihenry', 'mH', 'microhenry', 'uH',
+                           'nanohenry', 'nH']
+        for u in inductance_units:
+            mapping[u] = 'henry'
+        
+        # Magnetic field units (tesla)
+        magnetic_units = ['tesla', 'T', 'millitesla', 'mT', 'microtesla', 'uT',
+                         'nanotesla', 'nT', 'gauss', 'G', 'milligauss', 'mG']
+        for u in magnetic_units:
+            mapping[u] = 'tesla'
+        
+        # Magnetic flux units (weber)
+        flux_units = ['weber', 'Wb', 'milliweber', 'mWb', 'maxwell', 'Mx']
+        for u in flux_units:
+            mapping[u] = 'weber'
+        
+        # Radioactivity units (becquerel)
+        radioactivity_units = ['becquerel', 'Bq', 'kilobecquerel', 'kBq',
+                              'megabecquerel', 'MBq', 'gigabecquerel', 'GBq',
+                              'curie', 'Ci', 'millicurie', 'mCi', 'microcurie', 'uCi',
+                              'rutherford', 'Rd']
+        for u in radioactivity_units:
+            mapping[u] = 'becquerel'
+        
+        # Absorbed dose units (gray)
+        dose_units = ['gray', 'Gy', 'milligray', 'mGy', 'rad']
+        for u in dose_units:
+            mapping[u] = 'gray'
+        
+        # Equivalent dose units (sievert)
+        equiv_dose_units = ['sievert', 'Sv', 'millisievert', 'mSv', 'microsievert', 'uSv',
+                           'rem', 'millirem', 'mrem']
+        for u in equiv_dose_units:
+            mapping[u] = 'sievert'
+        
+        # Volume units (liter = m³)
+        volume_units = ['cubic_meter', 'm3', 'm^3', 'liter', 'L', 'liters', 'litre', 'litres', 'milliliter', 'mL',
+                       'milliliters', 'gallon', 'gal', 'gallons', 'quart', 'qt',
+                       'pint', 'pt', 'cup', 'cups', 'fluid_ounce', 'fl_oz']
+        for u in volume_units:
+            mapping[u] = 'cubic_meter'
+        
+        # Angle units (radian)
+        angle_units = ['radian', 'radians', 'degree', 'deg', 'degrees',
+                      'arcminute', 'arcmin', 'arcsecond', 'arcsec', 'gradian', 'grad']
+        for u in angle_units:
+            mapping[u] = 'radian'
+        
+        # Note: 'rad' is ambiguous (radian vs radiation absorbed dose)
+        # We map it to radian by default, but 'rad' for dose should use full name or context
+        
+        # Data units (bit)
+        data_units = ['bit', 'b', 'byte', 'B', 'kilobyte', 'kB', 'megabyte', 'MB',
+                     'gigabyte', 'GB', 'terabyte', 'TB', 'petabyte', 'PB',
+                     'kibibyte', 'KiB', 'mebibyte', 'MiB', 'gibibyte', 'GiB',
+                     'tebibyte', 'TiB']
+        for u in data_units:
+            mapping[u] = 'bit'
+        
+        # Velocity units
+        velocity_units = ['knot', 'kt', 'kn', 'mach']
+        for u in velocity_units:
+            mapping[u] = 'knot'  # Use knot as base for velocity units
+        
+        # Viscosity units
+        viscosity_units = ['pascal_second', 'Pa_s', 'poise', 'P', 'centipoise', 'cP',
+                          'stokes', 'St', 'centistokes', 'cSt']
+        for u in viscosity_units:
+            mapping[u] = 'pascal_second'
+        
+        # Concentration units (molar)
+        concentration_units = ['molar', 'M', 'millimolar', 'mM', 'micromolar', 'uM',
+                              'nanomolar', 'nM']
+        for u in concentration_units:
+            mapping[u] = 'molar'
         
         cls._UNIT_TO_BASE = mapping
         return mapping
